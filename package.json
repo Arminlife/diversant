@@ -1,0 +1,66 @@
+{
+	"author": "League Development",
+	"name": "league-bun-template",
+	"version": "1.0.0",
+	"description": "Web Development boilerplate - bun builder, base layout, snippets, and more.",
+	"directories": {
+		"src": "src"
+	},
+	"scripts": {
+		"start": "bun dev",
+		"dev": "cross-env NODE_ENV=development bun run .scripts/dev.mjs",
+		"q": "cross-env NODE_ENV=development QUIET=true bun run .scripts/dev.mjs",
+		"build": "cross-env NODE_ENV=production bun run .scripts/build.mjs",
+		"staging": "cross-env NODE_ENV=production STAGING=true bun run .scripts/build.mjs",
+		"js-lint": "eslint ./src --config",
+		"pretty": "npx prettier --check .",
+		"pretty:fix": "npx prettier --write .",
+		"deploy": "cross-env NODE_ENV=production npm run staging && bun run .scripts/deploy.mjs"
+	},
+	"dependencies": {
+		"@googlemaps/js-api-loader": "^1.16.8",
+		"@googlemaps/markerclusterer": "^2.6.2",
+		"@googlemaps/markerclustererplus": "^1.2.10",
+		"@samkirkland/ftp-deploy": "^1.2.4",
+		"cross-env": "^7.0.3",
+		"gsap": "^3.13.0",
+		"ismobilejs": "^1.1.1",
+		"sharp": "^0.33.5",
+		"swiper": "^12.0.3",
+		"tippy.js": "^6.3.7"
+	},
+	"devDependencies": {
+		"bun-bundler": "0.1.39",
+		"dotenv": "^16.4.5",
+		"eslint": "^8.4.1",
+		"eslint-config-airbnb": "^19.0.0",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-import": "^2.25.3",
+		"eslint-plugin-prettier": "^4.2.1",
+		"prettier": "2.8.3",
+		"sass": "1.77.6"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"> 5%"
+	],
+	"keywords": [
+		"league",
+		"bun",
+		"bundle",
+		"boilerplate",
+		"template",
+		"scss",
+		"pug",
+		"javascript"
+	],
+	"target": "web",
+	"lint-staged": {
+		"**/*.{js,jsx,tsx,ts,scss,css,json,html,pug}": [
+			"prettier --debug-check",
+			"prettier --write",
+			"prettier --check --config .prettierrc"
+		],
+		"*.{js,jsx}": "eslint --quiet"
+	}
+}

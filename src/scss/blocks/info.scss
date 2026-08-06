@@ -1,0 +1,141 @@
+.info {
+	@include top-border;
+
+	@include bp($point_2, min) {
+		padding: 5rem var(--gl-hr-indent) !important;
+	}
+
+	@include bp($point_3) {
+		padding: 4rem var(--gl-hr-indent) !important;
+	}
+
+	.section_in {
+		@include bp($point_2, min) {
+			padding-block: 0 !important;
+		}
+
+		@include top-border;
+		@include bottom-border;
+
+		&:after {
+			top: auto;
+		}
+	}
+}
+
+.info__cols {
+	display: flex;
+	flex-wrap: wrap;
+
+	&:before,
+	&:after {
+		position: absolute;
+
+		top: -5rem;
+		bottom: -5rem;
+
+		width: 1px;
+		background-color: $gray_2;
+
+		@include bp($point_2, min) {
+			content: '';
+		}
+	}
+
+	&:before {
+		left: -1px;
+	}
+
+	&:after {
+		right: -1px;
+	}
+}
+
+.info__col {
+	@include bp($point_2, min) {
+		padding: 2rem 3rem;
+	}
+
+	&:nth-child(1) {
+		@include bp($point_2, min) {
+			display: flex;
+			justify-content: center;
+			width: 58%;
+			padding-right: 16rem;
+		}
+	}
+
+	&:nth-child(2) {
+		@include bp($point_2, min) {
+			width: 42%;
+			border-left: 1px solid $gray_2;
+		}
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: 2.8rem;
+		}
+	}
+}
+
+.info__col_title {
+	font-size: 1.4rem;
+	font-weight: 700;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 1.4rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.info__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.info__tag {
+	display: block;
+	padding: 0.6rem 1.3rem;
+
+	font-size: 1.4rem;
+	color: $black;
+
+	border-radius: 2rem;
+	background-color: $gray_3;
+}
+
+.info__share_list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.info__share_link {
+	display: block;
+	width: 4.4rem;
+	height: 4.4rem;
+	padding: 1rem;
+
+	color: $black;
+	background-color: $gray_3;
+
+	transition: background-color 0.33s;
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			background: $gray_2;
+		}
+	}
+}

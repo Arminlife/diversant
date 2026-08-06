@@ -1,0 +1,12 @@
+#map path {
+    transition: all 0.4s ease-in-out;
+    fill: #2c2c2c;
+}
+#map path:hover{
+    fill:#ff0;
+    cursor: pointer;
+}
+g {
+
+}
+

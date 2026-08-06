@@ -1,0 +1,1321 @@
+.map {
+	padding-top: 0;
+
+	@include bp($point_2, min) {
+		margin-top: -2rem;
+	}
+}
+
+.map__wrap {
+	position: relative;
+
+	// @include bp($point_3) {
+	// 	margin: 0 -1.3rem;
+	// }
+}
+
+.map_sponsor {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include bp($point_2, min) {
+		gap: 1.2rem;
+		border-left: 1px solid $gray_2;
+		border-right: 1px solid $gray_2;
+	}
+
+	@include bp($point_3) {
+		gap: 0.5rem;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			padding-bottom: 3rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.map_sponsor__title {
+	font-weight: 700;
+
+	@include bp($point_2, min) {
+		font-size: 2.5rem;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.5rem;
+		line-height: 1.2;
+	}
+}
+
+.map_sponsor__logos {
+	display: flex;
+	align-items: center;
+
+	@include bp($point_2, min) {
+		gap: 1rem;
+	}
+
+	@include bp($point_3) {
+		gap: 1.5rem;
+	}
+}
+
+.map_sponsor__logos_img {
+	display: block;
+
+	.map_sponsor__logos_item:nth-child(odd) & {
+		@include bp($point_2, min) {
+			height: 3.4rem;
+		}
+
+		@include bp($point_3) {
+			height: 2.4rem;
+		}
+	}
+
+	.map_sponsor__logos_item:nth-child(even) & {
+		@include bp($point_2, min) {
+			height: 6rem;
+		}
+
+		@include bp($point_3) {
+			height: 4rem;
+		}
+	}
+}
+
+.map_sponsor__logos_img_el {
+	@include contain_img;
+}
+
+.map__el {
+	background-color: $black;
+
+	transition: height 0.3s;
+
+	@include bp($point_4, min) {
+		height: 80rem;
+	}
+
+	@include bp($point_4 - 1) {
+		height: 35rem;
+	}
+
+	.map--open_mod & {
+		@include bp($point_2, min) {
+			height: calc(100vh - var(--height-header));
+		}
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: var(--gl-vr-indent);
+		}
+	}
+}
+
+.map_labels {
+	width: 33rem;
+	max-width: 100%;
+
+	background-color: $gray_2;
+
+	@include bp($point_2, min) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		padding: 2rem 2rem;
+	}
+
+	@include bp($point_3) {
+		margin: 0 var(--gl-hr-indent);
+		width: calc(100% - var(--gl-hr-indent) * 2);
+		padding: 0.8rem;
+
+		border: 1px solid $gray_2;
+	}
+}
+
+.map_labels__title {
+	font-weight: 500;
+
+	@include bp($point_2, min) {
+		font-size: 2.2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.5rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 1rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 0.7rem;
+		}
+	}
+}
+
+.map_labels__list {
+	display: grid;
+
+	@include bp($point_2, min) {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 0.9rem 1rem;
+
+		.map--open_mod & {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@include bp($point_3) {
+		grid-template-columns: 1fr;
+		gap: 0.6rem 1rem;
+	}
+}
+
+.map_labels__item {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.map_labels__item {
+	display: flex;
+	align-items: center;
+}
+
+.map_labels__icon {
+	flex-shrink: 0;
+
+	@include bp($point_2, min) {
+		width: 2rem;
+		height: 2rem;
+		margin-right: 0.7rem;
+	}
+
+	@include bp($point_3) {
+		width: 2rem;
+		height: 2rem;
+		margin-right: 0.5rem;
+	}
+}
+
+.map_labels__label {
+	font-weight: 500;
+
+	@include bp($point_2, min) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+}
+
+// popup
+
+.map_popup {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+
+	background-color: $gray_3;
+
+	opacity: 0;
+	pointer-events: none;
+
+	transition: opacity 0.3s;
+
+	@include bp($point_2, min) {
+		width: 33rem;
+		padding: 2rem 2rem 8rem;
+	}
+
+	@include bp($point_3) {
+		width: 17rem;
+		padding: 0.6rem 0.8rem 8rem 1rem;
+	}
+
+	&.map_popup--v2_mod {
+		@include bp($point_2, min) {
+			width: 66rem;
+		}
+
+		@include bp($point_3) {
+			width: 33.8rem;
+		}
+	}
+
+	&.map_popup--open_state {
+		opacity: 1;
+		pointer-events: initial;
+	}
+}
+
+.map_popup__head {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+
+		.map_popup--v2_mod & {
+			@include bp($point_2, min) {
+				margin-bottom: 1rem;
+			}
+
+			@include bp($point_3) {
+				margin-bottom: 0.3rem;
+			}
+		}
+	}
+}
+
+.map_popup__title {
+	font-weight: 500;
+
+	@include bp($point_2, min) {
+		font-size: 2.5rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+}
+
+.map_popup__close {
+	margin-left: auto;
+	flex-shrink: 0;
+
+	cursor: pointer;
+
+	@include bp($point_2, min) {
+		width: 4rem;
+		height: 4rem;
+	}
+
+	@include bp($point_3, $point_4) {
+		margin-top: -0.4rem;
+		margin-right: -0.6rem;
+		margin-bottom: -0.4rem;
+		width: 3.2rem;
+		height: 3.2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	&.map_popup__close--pos_mod {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+}
+
+// menu
+
+.map_menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: $gray_3;
+	color: $black;
+
+	cursor: pointer;
+	transition: color 0.3s;
+
+	@include bp($point_2, min) {
+		width: 8rem;
+		height: 8rem;
+	}
+
+	@include bp($point_3) {
+		width: 3.8rem;
+		height: 3.8rem;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+}
+
+.map_menu__icon {
+	position: relative;
+
+	border-top: 2px solid $black;
+	border-bottom: 2px solid $black;
+
+	@include bp($point_2, min) {
+		width: 2.8rem;
+		height: 2.2rem;
+	}
+
+	@include bp($point_3) {
+		width: 2rem;
+		height: 1.6rem;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+
+		width: 100%;
+		height: 2px;
+		margin-top: -1px;
+
+		background-color: $black;
+	}
+}
+
+// filters
+
+.map_popup__filter_trigger {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	cursor: pointer;
+
+	&:not(:last-child) {
+		border-bottom: 1px solid rgba($gray_2, 0.6);
+
+		@include bp($point_2, min) {
+			padding-bottom: 1.4rem;
+			margin-bottom: 1.4rem;
+		}
+
+		@include bp($point_3) {
+			padding-bottom: 1.1rem;
+			margin-bottom: 1.2rem;
+		}
+	}
+}
+
+.map_popup__filter_icon {
+	flex-shrink: 0;
+
+	@include bp($point_2, min) {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	@include bp($point_3) {
+		height: 1.8rem;
+		width: 1.8rem;
+	}
+}
+
+.map_popup__filter_title {
+	font-weight: 500;
+	line-height: 1.2;
+
+	@include bp($point_2, min) {
+		font-size: 2.5rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+}
+
+.map_popup__filter_arrow {
+	margin-left: auto;
+
+	flex-shrink: 0;
+
+	transform-origin: 50% 50%;
+	transition: transform 0.3s;
+
+	@include bp($point_2, min) {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	@include bp($point_3) {
+		width: 1.8rem;
+		height: 1.8rem;
+	}
+
+	.map_popup__filter--active-mod & {
+		transform: rotate(90deg);
+	}
+}
+
+.map_popup__filter_data {
+	max-height: 0;
+	overflow: hidden;
+
+	opacity: 0;
+	transition: all 0.25s ease-out;
+	will-change: max-height;
+	pointer-events: none;
+
+	.map_popup__filter--active-mod & {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.map_popup__filter_data_in {
+	position: relative;
+
+	@include bp($point_2, min) {
+		padding-left: 2.4rem;
+		padding-bottom: 4rem;
+	}
+
+	@include bp($point_3) {
+		padding-left: 1.6rem;
+		padding-bottom: 2rem;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 2rem;
+		left: 0;
+
+		width: 100%;
+		background-color: $gray_2;
+		opacity: 0.6;
+	}
+}
+
+.map_popup__filter_item {
+	padding-left: 1rem;
+
+	&:not(:last-child) {
+		border-bottom: 1px solid rgba($gray_2, 0.6);
+
+		@include bp($point_2, min) {
+			padding-bottom: 1.3rem;
+			margin-bottom: 1.4rem;
+		}
+
+		@include bp($point_3) {
+			padding-bottom: 0.6rem;
+			margin-bottom: 0.6rem;
+		}
+	}
+}
+
+.map_popup__footer {
+	margin-top: auto;
+}
+
+.map_popup__clear {
+	display: block;
+	width: 100%;
+
+	font-weight: 500;
+	font-family: $font_1;
+	color: $black;
+	text-align: center;
+	text-decoration: underline;
+
+	transition: color 0.3s;
+	cursor: pointer;
+
+	@include bp($point_2, min) {
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.2rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+}
+
+.map_popup__date {
+	color: $gray_4;
+
+	text-align: center;
+
+	@include bp($point_2, min) {
+		font-size: 1.2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 0.8rem;
+	}
+}
+
+// info
+
+.map_popup__info {
+	position: relative;
+
+	// column-count: 2;
+	// column-gap: 0;
+
+	&.map_popup__info--v2_mod {
+		// column-count: 1;
+
+		&:before {
+			border: none;
+			border-top: 1px solid rgba($gray_2, 0.6);
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 3rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+
+		pointer-events: none;
+	}
+
+	&:before {
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		@include bp($point_2, min) {
+			border: 1px solid rgba($gray_2, 0.6);
+		}
+
+		@include bp($point_3) {
+			border-top: 1px solid rgba($gray_2, 0.6);
+			border-bottom: 1px solid rgba($gray_2, 0.6);
+		}
+	}
+
+	&:after {
+		top: 0;
+		left: 50%;
+
+		width: 1px;
+		height: 100%;
+		background-color: $gray_2;
+		opacity: 0.6;
+	}
+}
+
+.map_popup__info_in {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	.map_popup__info--v2_mod & {
+		grid-template-columns: 1fr;
+	}
+}
+
+.map_popup__info_item {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+
+	border-bottom: 1px solid rgba($gray_2, 0.6);
+
+	&:nth-child(6) {
+		break-after: column;
+	}
+
+	.map_popup__info--v2_mod & {
+		padding-left: 0;
+	}
+
+	@include bp($point_2, min) {
+		padding: 1.5rem 1rem;
+	}
+
+	@include bp($point_3) {
+		padding: 0.7rem 0.7rem;
+	}
+}
+
+.map_popup__info_icon {
+	flex-shrink: 0;
+
+	.map_popup__info--v2_mod & {
+		@include bp($point_2, min) {
+			margin-top: 0.4rem;
+		}
+	}
+
+	@include bp($point_2, min) {
+		width: 2.2rem;
+		height: 2.2rem;
+	}
+
+	@include bp($point_3) {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+}
+
+.map_popup__info_label {
+	font-weight: 500;
+	line-height: 1.2;
+
+	.map_popup__info--v2_mod & {
+		line-height: 1.5;
+	}
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1rem;
+	}
+}
+
+// block
+
+.map_popup__block {
+	&:not(:last-child) {
+		border-bottom: 1px solid rgba($gray_2, 0.6);
+
+		@include bp($point_2, min) {
+			padding-bottom: 1.5rem;
+			margin-bottom: 3rem;
+		}
+
+		@include bp($point_3) {
+			padding-bottom: 0.6rem;
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.map_popup__block_title {
+	line-height: 1.2;
+	font-weight: 500;
+
+	@include bp($point_2, min) {
+		font-size: 2.5rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+
+	&:not(:last-child) {
+		border-bottom: 1px solid rgba($gray_2, 0.6);
+
+		@include bp($point_2, min) {
+			padding-bottom: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		@include bp($point_3) {
+			padding-bottom: 0.6rem;
+			margin-bottom: 0.6rem;
+		}
+	}
+}
+
+// gallery
+
+.map_popup__gallery {
+	position: relative;
+	margin: 0 -2rem;
+
+	.swiper-wrapper {
+		padding: 0 2rem;
+	}
+}
+
+.map_popup__gallery_arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+
+	color: $black;
+	filter: drop-shadow(0 0 5px $white);
+
+	transition: color 0.3s;
+
+	cursor: pointer;
+
+	&.swiper-button-disabled {
+		display: none;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+
+	@include bp($point_2, min) {
+		width: 4.8rem;
+		height: 4.8rem;
+		margin-top: -2.4rem;
+	}
+
+	@include bp($point_3) {
+		width: 2.4rem;
+		height: 2.4rem;
+		margin-top: -1.2rem;
+	}
+
+	&.map_popup__gallery_arrow--prev_mod {
+		left: 2rem;
+		transform-origin: 50% 50%;
+		transform: rotate(180deg);
+	}
+
+	&.map_popup__gallery_arrow--next_mod {
+		right: 2rem;
+	}
+}
+
+.map_popup__gallery_item {
+	@include bp($point_2, min) {
+		width: 25rem !important;
+		margin-right: 2rem;
+	}
+
+	@include bp($point_3) {
+		width: 12.4rem !important;
+		margin-right: 0.6rem;
+	}
+}
+
+.map_popup__gallery_image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1.39;
+
+	border: 1px solid $gray_5;
+}
+
+.map_popup__gallery_image_el {
+	@include cover_img;
+}
+
+// gallery v2
+
+.map_popup__gallery_v2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem 2rem;
+}
+
+.map_popup__gallery_v2_image {
+	display: block;
+	aspect-ratio: 1.39;
+	border: 1px solid $gray_5;
+}
+
+.map_popup__gallery_v2_image_el {
+	@include cover_img;
+}
+
+// reviews
+
+.map_popup__reviews_btn {
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	font-family: $font_1;
+
+	color: $black;
+
+	border-bottom: 1px solid rgba($gray_2, 0.6);
+
+	cursor: pointer;
+	transition: color 0.3s;
+
+	@include bp($point_2, min) {
+		gap: 1rem;
+		padding-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+		padding-bottom: 0.6rem;
+		margin-bottom: 0.6rem;
+		gap: 0.4rem;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+}
+
+.map_popup__reviews_btn_icon {
+	@include bp($point_2, min) {
+		width: 2.2rem;
+		height: 2.2rem;
+	}
+
+	@include bp($point_3) {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+}
+
+.map_popup__reviews_btn_title {
+	font-weight: 500;
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1rem;
+	}
+}
+
+.map_popup__reviews_btn_arrow {
+	@include bp($point_2, min) {
+		width: 2.4rem;
+		height: 2.4rem;
+		margin-left: 8rem;
+	}
+
+	@include bp($point_3) {
+		width: 1.6rem;
+		height: 1.6rem;
+		margin-left: 2.8rem;
+	}
+}
+
+.map_popup__reviews_list {
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.map_popup__review {
+	&:not(:last-child) {
+		border-bottom: 1px solid rgba($gray_2, 0.6);
+
+		@include bp($point_2, min) {
+			padding-bottom: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+
+		@include bp($point_3) {
+			padding-bottom: 0.5rem;
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&:nth-child(n + 4) {
+		display: none;
+	}
+
+	.map_popup--show_all_state & {
+		display: block;
+	}
+}
+
+.map_popup__review_head {
+	display: flex;
+	align-items: center;
+
+	@include bp($point_2, min) {
+		gap: 1rem 2.5rem;
+	}
+
+	@include bp($point_3) {
+		gap: 1rem 1.2rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 1rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 0.6rem;
+		}
+	}
+}
+
+.map_popup__review_name {
+	font-weight: 500;
+	line-height: 1.2;
+
+	@include bp($point_2, min) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 1rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+.map_popup__review_date {
+	font-weight: 500;
+	line-height: 1.2;
+
+	@include bp($point_2, min) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1rem;
+	}
+}
+
+.map_popup__review_time {
+	font-weight: 500;
+	line-height: 1.2;
+
+	@include bp($point_2, min) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1rem;
+	}
+}
+
+.map_popup__review_text {
+	font-weight: 500;
+	line-height: 1.2;
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.2rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+.map_popup__reviews_all {
+	display: block;
+	width: 100%;
+
+	font-weight: 500;
+	text-decoration: underline;
+	text-align: center;
+
+	cursor: pointer;
+
+	.map_popup--show_all_state & {
+		display: none;
+	}
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.2rem;
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+}
+
+// stars
+
+.map_popup__rating {
+	display: flex;
+	gap: 1rem;
+
+	color: $black;
+	cursor: pointer;
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			margin-bottom: 1.5rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+.map_popup__rating_total {
+	font-weight: 500;
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+}
+
+.stars_rating {
+	display: flex;
+
+	@include bp($point_2, min) {
+		gap: 1rem;
+	}
+
+	@include bp($point_3) {
+		gap: 0.6rem;
+	}
+
+	.map_popup__review & {
+		@include bp($point_3) {
+			gap: 0.8rem;
+		}
+	}
+}
+
+.stars_rating__item {
+	@include bp($point_2, min) {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	@include bp($point_3) {
+		width: 2rem;
+		height: 2rem;
+	}
+
+	.map_popup__review & {
+		@include bp($point_3) {
+			width: 1.6rem;
+			height: 1.6rem;
+		}
+	}
+}
+
+// thanks
+
+.map_popup__thanks {
+	padding-top: 6rem;
+	display: none;
+
+	.map_popup--submitted_mod & {
+		display: block;
+	}
+}
+
+.map_popup__title_v2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+	font-weight: 500;
+	text-align: center;
+
+	@include bp($point_2, min) {
+		font-size: 2.5rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+
+	&:not(:last-child) {
+		padding-bottom: 1.8rem;
+		margin-bottom: 1.8rem;
+		border-bottom: 1px solid rgba($gray_2, 0.6);
+	}
+}
+
+.map_popup__thanks_text {
+	padding: 0 2rem;
+
+	line-height: 1.2;
+	font-weight: 500;
+	text-align: center;
+
+	@include bp($point_2, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 1.3rem;
+	}
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 2.6rem;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 4rem;
+	}
+}
+
+.map_popup__popup_buttons {
+	display: flex;
+	justify-content: end;
+	gap: 2rem;
+}
+
+// form
+
+.map_popup__back {
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+
+	color: $black;
+
+	cursor: pointer;
+	transition: color 0.3s;
+
+	@include bp($point_2, min) {
+		width: 4rem;
+		height: 4rem;
+	}
+
+	@include bp($point_3) {
+		width: 2.8rem;
+		height: 2.8rem;
+	}
+
+	svg {
+		transform-origin: 50% 50%;
+		transform: rotate(180deg);
+	}
+
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			color: $red;
+		}
+	}
+}
+
+.map_popup__title_icon {
+	width: 2.8rem;
+	height: 2.8rem;
+}
+
+.map_popup__form {
+	display: none;
+
+	padding-top: 6rem;
+
+	.map_popup--review_mod & {
+		display: block;
+	}
+
+	.map_popup--submitted_mod & {
+		display: none;
+	}
+}
+
+.map_popup__marker_info {
+	display: block;
+
+	.map_popup--review_mod & {
+		display: none;
+	}
+}
+
+.map_popup__form_item {
+	position: relative;
+
+	&.map_popup__form_item--offset_mod {
+		margin-bottom: 6rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.form_textarea__counter {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+
+.map_popup__excerpt:not(:empty) {
+	font-weight: 500;
+	line-height: 1.2;
+	font-size: 1rem;
+
+	@include bp($point_2, min) {
+		margin-bottom: 1.5rem;
+		font-size: 2rem;
+	}
+}

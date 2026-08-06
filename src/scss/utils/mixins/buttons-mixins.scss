@@ -1,0 +1,134 @@
+@mixin st_btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+	white-space: nowrap;
+	font-family: $font_1;
+
+	cursor: pointer;
+
+	&[type='submit'] {
+		@include appearance(none);
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+//color mixins:
+@mixin btn_style_red {
+	font-weight: 500;
+	color: $white;
+	background-color: $red;
+	transition: background-color 0.3s ease;
+
+	@include st_btn;
+
+	&:hover {
+		background-color: darken($red, 10%);
+	}
+}
+
+@mixin btn_style_yellow {
+	font-weight: 500;
+	color: $black;
+	background-color: $yellow;
+	transition: background-color 0.3s ease;
+
+	@include st_btn;
+
+	&:hover {
+		background-color: darken($yellow, 10%);
+	}
+}
+
+@mixin btn_style_black {
+	font-weight: 500;
+	color: $white;
+	background-color: $black;
+	transition: background-color 0.3s ease;
+
+	@include st_btn;
+
+	&:hover {
+		background-color: darken($black, 10%);
+	}
+}
+
+@mixin btn_style_border {
+	font-weight: 500;
+	color: $white;
+	background-color: transparent;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	border: 1px solid $black;
+	color: $black;
+
+	@include st_btn;
+
+	&:hover {
+		background-color: $black;
+		color: $white;
+	}
+}
+
+//size mixins:
+@mixin btn_size_normal {
+	@include bp($point_2, min) {
+		min-width: 39.2rem;
+
+		height: 6.6rem;
+		padding: 1.4rem 0 1.4rem 2rem;
+
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_3) {
+		height: 4.8rem;
+		padding: 1.2rem 0 1.2rem 1.4rem;
+		width: 100%;
+
+		font-size: 1.4rem;
+	}
+
+	justify-content: flex-start;
+	align-items: center;
+}
+
+@mixin btn_size_v2 {
+	width: 100%;
+	padding: 1rem 1rem;
+	justify-content: flex-start !important;
+	align-items: flex-start !important;
+
+	font-size: 1.4rem;
+
+	@include bp($point_2, min) {
+		height: 7rem;
+	}
+
+	@include bp($point_3) {
+		height: 4.8rem;
+	}
+}
+
+@mixin btn_size_v3 {
+	padding: 0 1.2rem;
+
+	@include bp($point_2, min) {
+		height: 4.8rem;
+		line-height: 4.8rem;
+
+		font-size: 2rem;
+	}
+
+	@include bp($point_3) {
+		height: 3rem;
+
+		line-height: 3rem;
+		font-size: 1.3rem;
+	}
+}

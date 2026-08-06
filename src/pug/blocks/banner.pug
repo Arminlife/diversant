@@ -1,0 +1,17 @@
+include ../templates/mixins/m-button
+
+section.section.banner.section--border_mod
+	.section_in.section_in--border_mod
+		.banner__content
+			+picture({
+				img: 'brave.jpg',
+				class: 'banner__image',
+				img_class: 'banner__image_el',
+				alt: 'some image'
+			})
+			h3.banner__title Май #[br] сміливість #[br] знати
+			.banner__button
+				+button({
+					href: '#',
+					text: 'Підтримати'
+				})

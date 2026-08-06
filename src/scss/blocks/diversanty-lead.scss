@@ -1,0 +1,100 @@
+//- Диверсанти — лід (2 колонки: текст + мокап телефона з Telegram-чатом)
+
+.diversanty_lead {
+	padding-top: 3.5rem;
+	margin-bottom: -5.5rem;
+	&__grid {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 4rem;
+		align-items: start;
+		max-width: 112rem;
+		margin: 0 auto;
+
+		@include bp($point_3) {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+	}
+
+	&__title {
+		margin: 0 0 3rem;
+
+		font-family: $font_1;
+		font-weight: 700;
+		font-size: clamp(2rem, 2.6vw, 3.2rem);
+		line-height: 1.3;
+	}
+
+	&__text {
+		p {
+			margin: 0 0 2.5rem;
+
+			font-size: 1.6rem;
+			line-height: 1.5;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__media {
+		@include bp($point_3) {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	// --- Мокап iPhone (png-рамка) + чат, що скролиться в екрані ---
+	&__phone {
+		position: relative;
+		width: 40rem;
+		max-width: 100%;
+		right: -6rem;
+		top: -6rem;
+		margin: 0 auto;
+		aspect-ratio: 399 / 713;
+	}
+
+	&__phone_frame {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	// екран = зелена область мокапа (виміряно: 16.79% / 16.83% / 66.42% / 66.2%)
+	&__phone_screen {
+		position: absolute;
+		z-index: 2;
+		top: 16.83%;
+		left: 16.79%;
+
+		overflow-x: hidden;
+		overflow-y: auto;
+		width: 66.42%;
+		height: 66.2%;
+
+		background: #fff;
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior: contain;
+
+		// приховуємо скролбар, лишаючи прокрутку
+		scrollbar-width: none;
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+	}
+
+	&__phone_chat {
+		display: block;
+		width: 100%;
+		height: auto; // натуральна висота → чат довший за екран і скролиться
+	}
+}

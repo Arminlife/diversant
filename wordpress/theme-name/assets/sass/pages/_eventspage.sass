@@ -1,0 +1,273 @@
+.post-type-archive-events
+	h2
+		@extend .news-block-title
+	.subscription
+		margin: 30px 0
+.events-block
+	margin-top: 30px
+	margin-bottom: 30px
+.main-event-block
+	position: relative
+	display: flex
+	margin-bottom: 45px
+	box-shadow: 3px 6px 10px 6px rgba(92,104,152,.05)
+	.main-event-poster
+		min-width: 280px
+		width: 280px
+	.event-data-block
+		width: 100%
+		//background: $color-light-grey
+		h3
+			font-size: 24px
+			color: #464646
+			text-transform: uppercase
+			font-family: var(--font-rc)
+			line-height: normal
+			margin: 10px 0 25px 30px
+		.event-data
+			padding: 0 30px
+			color: #464646
+			font-size: 16px
+			&.location
+				margin-top: 15px
+				padding: 10px 30px
+				border-top: 1px solid #ccc
+				align-items: flex-start
+				svg
+					margin-top: 5px
+				div
+					a
+						display: block
+				.address
+					font-size: 15px
+					font-weight: 200
+		.bottom-btn-block
+			position: absolute
+			width: 100%
+			//right: 0
+			bottom: 0
+			border-top: 1px solid $color-dark-grey
+			//margin-top: 59px
+			font-size: 14px
+			text-transform: uppercase
+			a
+				width: 49%
+				display: inline-block
+				padding: 15px 15px
+				text-align: center
+			.purchase-btn
+				background: $color-secondary
+				color: #fff
+				transition: all 0.4s ease-in-out
+				&:hover
+					background: lighten($color-secondary, 20%)
+.event-data-block
+	position: relative
+	.event-data
+		display: flex
+		font-family: var(--font-main)
+		justify-content: flex-start
+		align-items: center
+		color: #fff
+		font-size: 14px
+		margin-bottom: 5px
+		svg
+			margin-right: 15px
+		&:before
+			display: none
+			margin-right: 15px
+			font-style: normal
+			font-variant: normal
+			text-rendering: auto
+			-webkit-font-smoothing: antialiased
+			content: ""
+			font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands"
+			font-size: 18px
+			//font-weight: 900
+		&.date
+			&:before
+				content: "\f073"
+		&.time
+			&:before
+				content: "\f017"
+				margin-right: 10px
+		&.location
+			margin-bottom: 0
+			&:before
+				content: "\f3c5"
+				font-weight: 900
+		&.price
+			&:before
+				content: "\f6f2"
+				font-weight: 900
+
+.more-events-block
+	display: flex
+	.closest-event
+		h2
+			font-size: 14px
+			color: #333
+			text-transform: uppercase
+			margin: 5px 0 10px 0
+	.previous-event
+		margin-right: 58px
+	.previous-event, .next-event
+		position: relative
+		.event-poster
+			//width: 210px
+			max-width: 215px
+			height: 290px
+			overflow: hidden
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+		&:hover
+			.event-data-block
+				opacity: 1
+				cursor: pointer
+				height: 100%
+				width: 100%
+		.event-data-block
+			opacity: 0
+			position: absolute
+			z-index: 1
+			left: 0
+			bottom: 0
+			width: 100%
+			height: 0
+			overflow: hidden
+			padding: 30px 15px
+			//background: lighten($color-secondary, 20%)
+			background: $color-secondary
+			transition: all 0.5s ease-in-out
+			color: #fff
+			h3
+				margin-bottom: 15px
+				text-transform: uppercase
+				font-size: 15px
+		.bottom-btn-block
+			margin-top: 20px
+			.purchase-btn
+				display: inline-block
+				padding: 10px 0
+				text-align: center
+				border: none
+				width: 100%
+				background: #333
+				font-size: 13px
+				text-transform: uppercase
+				&:hover
+					background: #000
+.events-archive-block
+	margin-top: 30px
+	.archive-links
+		display: flex
+		flex-wrap: wrap
+		a
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 28%
+			height: 32px
+			border: 1px solid #333
+			color: #333
+			margin-bottom: 10px
+			margin-right: 20px
+			-webkit-border-radius: 4px
+			-moz-border-radius: 4px
+			border-radius: 4px
+			font-size: 16px
+			font-weight: 400
+			transition: all 0.4s ease-in-out
+			&:hover
+				border: 1px solid transparent
+				color: #fff
+				background: $color-secondary
+	h2
+		@extend .news-block-title
+.events-news
+	margin-top: 30px
+.events-article-list
+	padding-right: 30px
+	@extend .news-block-articles-list
+	article
+		@extend .news-block-article
+		padding: 8px 0
+		a
+			&:hover
+				text-decoration: underline
+	h3
+		color: #333
+		font-family: var(--font-rc)
+		text-transform: uppercase
+		font-size: 15px
+		margin-bottom: 0
+.become-partner
+	//background: #333
+	//text-align: center
+	//border: 2px solid $color-secondary
+	width: 100%
+	margin: 0 0 30px 0
+	//padding: 30px 25px
+	padding: 30px 0
+	a
+		width: 50%
+		display: inline-block
+		text-align: center
+		font-size: 16px
+		font-family: var(--font-rc)
+		font-weight: 600
+		//color: #fff
+		//border: 2px solid #fff
+		border: 2px solid $color-secondary
+		color: $color-secondary
+		padding: 10px 0
+		transition: all .3s ease-in-out
+		text-transform: uppercase
+		&:hover
+			background: $color-secondary
+			border: 2px solid $color-secondary
+			color: #fff
+
+.newsletter-signup-block
+	padding: 50px 0
+	background: #FFC107
+	margin: 30px 0
+	text-align: center
+.partners
+	height: 100%
+	h2
+		@extend .news-block-title
+.js-partners-carousel
+	margin-bottom: 30px
+	margin-top: 30px
+	.slide-item
+		overflow: hidden
+		img
+			width: auto
+			height: auto
+	.owl-item
+		img
+			width: auto
+			height: auto
+
+.region-list
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	list-style: none
+	padding: 0
+	li
+		display: block
+		flex-basis: 24%
+		text-align: left
+		padding: 5px 14px
+		//border-left: 2px solid $color-secondary
+		margin-bottom: 10px
+		box-shadow: 3px 6px 10px 6px rgba(92,104,152,.04)
+		color: $color-dimmed
+		font-size: 16px
+		&:hover
+			text-decoration: underline
+			cursor: pointer

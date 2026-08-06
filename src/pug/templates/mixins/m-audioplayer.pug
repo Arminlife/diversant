@@ -1,0 +1,21 @@
+mixin audioplayer(data)
+	//- .audioplayer
+	//- 	if data.label
+	//- 		.audioplayer__label #{data.label}
+	//- 	.audioplayer__block
+	//- 		audio.audioplayer__audio(controls src=data.src)
+	//- 		if data.duration
+	//- 			.audioplayer__duration #{data.duration}
+	.audioplayer.js-audioplayer
+		button.audioplayer__play(type='button').js-audioplayer-play
+			+icon('play')
+			+icon('pause')
+		.audioplayer__canvas
+			canvas.audioplayer__canvas_el.js-audioplayer-canvas
+		.audioplayer__sound
+			button.audioplayer__mute(type='button').js-audioplayer-mute
+				+icon('sound')
+				+icon('sound-off')
+			.audioplayer__volume
+				input.audioplayer__volume_bar(type="range" min="0" max="1" step="0.01" value="1").js-audioplayer-volume-input
+		audio.audioplayer__audio(src=data.audio controls).js-audioplayer-audio

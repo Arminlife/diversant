@@ -1,0 +1,12 @@
+//- Диверсанти — гра «Пройди вербувальника».
+//- Інтерфейс Telegram-чату в айфоні: обираєш сценарій → розгалужений діалог →
+//- фінал (повідомив СБУ/поліцію АБО завербований). Чат рендериться з JS
+//- (див. components/diversanty-game.js), контент — дата-кероване (потім із CPT).
+section.section.diversanty_game(data-diversanty-game)
+	.section_in
+		h2.diversanty_game__title Гра «Пройди вербувальника»
+		.diversanty_game__phone
+			img.diversanty_game__frame(src="./images/diversanty-phone.png" alt="" aria-hidden="true")
+			.diversanty_game__screen(data-game-screen)
+				.diversanty_game__chat(data-game-chat aria-live="polite")
+					//- повідомлення й кнопки вибору додає JS

@@ -1,0 +1,185 @@
+[
+	{
+		"id": 38450,
+		"type": "expensive_shelters",
+		"type_cyr": "Дорогі укриття",
+		"lat": "50.4729209",
+		"lon": "30.613219",
+		"district": "desnianskyy",
+		"district_cyr": "Деснянський",
+		"adress": "вул. Миропільська, 8",
+		"kind": "Укриття",
+		"inclusive": false,
+		"fullday": "Цілодобово",
+		"condition": "Був ремонт",
+		"seats": null,
+		"wc": null,
+		"water": null,
+		"capacity": null,
+		"square": null,
+		"gallery": [],
+		"review_stats": {
+			"count": 0,
+			"average": 0,
+			"stars": {
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 0
+			}
+		},
+		"reviews": [],
+		"destroyed": {
+			"district": "",
+			"address": "",
+			"dead": "",
+			"reason": "",
+			"when": ""
+		},
+		"info": "Капітальний ремонт приміщень та найпростішого укриття Центру соціальної реабілітації осіб з інтелектуальними та психічними порушеннями. Тендер завершений. Сума — 66,5 млн грн. Переможець — ТОВ «Грін Трейдінг».",
+		"exits": []
+	},
+	{
+		"id": 38324,
+		"type": "child_death",
+		"type_cyr": "Загибель дітей",
+		"lat": "50.405693892150666",
+		"lon": "30.576394871021563",
+		"district": "holosiivskyy",
+		"district_cyr": "Голосіївський",
+		"adress": "вул. Деревообробна, 7",
+		"kind": null,
+		"inclusive": false,
+		"fullday": "Цілодобово",
+		"condition": null,
+		"seats": null,
+		"wc": null,
+		"water": null,
+		"capacity": null,
+		"square": null,
+		"gallery": [
+			"https://slidstvo.wstart.com.ua/wp-content/uploads/2025/11/nabu-2-scaled.jpg",
+			"https://slidstvo.wstart.com.ua/wp-content/uploads/2025/11/dyzayn-2-scaled.jpg",
+			"https://slidstvo.wstart.com.ua/wp-content/uploads/2025/11/Skhema-zviazku-rodyny-Hermana-Halushchenka-z-kompaniieiu-Astra-Liuks-scaled.jpg",
+			"https://slidstvo.wstart.com.ua/wp-content/uploads/2025/11/6RnBogRgbRVNJqh.jpg"
+		],
+		"review_stats": {
+			"count": 0,
+			"average": 0,
+			"stars": {
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 0
+			}
+		},
+		"reviews": [],
+		"destroyed": {
+			"district": "Голосіївський",
+			"address": "вул. Деревообробна, 7",
+			"dead": "2 особи, з них 1 дитина – 5-річна Ніколь Гаранська",
+			"reason": "Шахед",
+			"when": "23 Березня, 2025"
+		},
+		"info": "",
+		"exits": []
+	},
+	{
+		"id": 38135,
+		"type": "dual_purpose",
+		"type_cyr": "Споруда подвійного призначення",
+		"lat": "50.3673018",
+		"lon": "30.4520595",
+		"district": "holosiivskyy",
+		"district_cyr": "Голосіївський",
+		"adress": "Ст. «Теремки» (6 виходів)",
+		"kind": "Станція метрополітену",
+		"inclusive": true,
+		"fullday": "Цілодобово",
+		"condition": "Придатне",
+		"seats": "Так",
+		"wc": "Так",
+		"water": "Так",
+		"capacity": "1039",
+		"square": "1039",
+		"gallery": [],
+		"review_stats": {
+			"count": 0,
+			"average": 0,
+			"stars": {
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 0
+			}
+		},
+		"reviews": [],
+		"destroyed": {
+			"district": "",
+			"address": "",
+			"dead": "",
+			"reason": "",
+			"when": ""
+		},
+		"info": "",
+		"exits": [
+			{
+				"lat": "50.368",
+				"lon": "30.46"
+			},
+			{
+				"lat": "50.368",
+				"lon": "30.44"
+			}
+		]
+	},
+	{
+		"id": 38135,
+		"type": "dual_purpose",
+		"type_cyr": "Споруда подвійного призначення",
+		"lat": "50.3773018",
+		"lon": "30.4520595",
+		"district": "holosiivskyy",
+		"district_cyr": "Голосіївський",
+		"adress": "Ст. «Теремки» (6 виходів)",
+		"kind": "Станція метрополітену",
+		"inclusive": true,
+		"fullday": "Цілодобово",
+		"condition": "Придатне",
+		"seats": "Так",
+		"wc": "Так",
+		"water": "Так",
+		"capacity": "1039",
+		"square": "1039",
+		"gallery": [],
+		"review_stats": {
+			"count": 0,
+			"average": 0,
+			"stars": {
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 0
+			}
+		},
+		"reviews": [],
+		"destroyed": {
+			"district": "",
+			"address": "",
+			"dead": "",
+			"reason": "",
+			"when": ""
+		},
+		"info": "",
+		"exits": [
+			{
+				"lat": "50.378",
+				"lon": "30.46"
+			}
+		]
+	}
+]

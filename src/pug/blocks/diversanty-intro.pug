@@ -1,0 +1,30 @@
+//- Диверсанти — fullpage-інтро.
+//- Рендериться ПЕРЕД хедером (у WP — через wp_body_open). Хедер/футер не чіпаємо.
+section.diversanty_intro(data-diversanty-intro)
+	.diversanty_intro__sticky
+		.diversanty_intro__stage
+			p.diversanty_intro__line(data-diversanty-frame="0") Привіт, робота цікавить?
+			p.diversanty_intro__line(data-diversanty-frame="1")
+				| Нічого складного,
+				br
+				| платимо 1000 доларів
+			p.diversanty_intro__line(data-diversanty-frame="2")
+				| Будь-яке місто України,
+				br
+				| в офісі сидіти не треба
+			p.diversanty_intro__line.diversanty_intro__line--ru_mod(data-diversanty-frame="3") Работа непыльная
+
+			figure.diversanty_intro__photo(data-diversanty-photo)
+				img.diversanty_intro__photo_img(
+					src="./images/diversanty-doll.webp"
+					alt="Дитяча лялька серед руїн зруйнованого будинку"
+					width="1366"
+					height="800"
+				)
+				span.diversanty_intro__veil(aria-hidden="true")
+
+			h1.diversanty_intro__title(data-diversanty-title) Завербовані діти
+
+		.diversanty_intro__hint(data-diversanty-hint aria-hidden="true")
+			span.diversanty_intro__hint_text Прокрутіть
+			span.diversanty_intro__hint_arrow

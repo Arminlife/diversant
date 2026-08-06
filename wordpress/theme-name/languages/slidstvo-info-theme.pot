@@ -1,0 +1,291 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: slidstvo.info\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-18 17:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.1"
+
+#: footer.php:76
+msgid "our social media"
+msgstr ""
+
+#: footer.php:85
+msgid "contact us"
+msgstr ""
+
+#: single-special-projects.php:40
+msgid "Visit project site"
+msgstr ""
+
+#: functions.php:35
+msgid "Main Navigation"
+msgstr ""
+
+#: functions.php:36
+msgid "Sub Menu"
+msgstr ""
+
+#: functions.php:496
+msgid "Please choose all payment options"
+msgstr ""
+
+#: single-video.php:62 archive-video.php:159
+msgid "min"
+msgstr ""
+
+#: index.php:35
+msgid "Important"
+msgstr ""
+
+#: archive-video.php:108
+msgid "View"
+msgstr ""
+
+#: archive-video.php:124
+msgid "Other videos"
+msgstr ""
+
+#: 404.php:32 header.php:18
+msgid "Page not found"
+msgstr ""
+
+#: taxonomy-journalists.php:70
+msgid "Author's materials"
+msgstr ""
+
+#: header.php:125
+msgid "Search"
+msgstr ""
+
+#. Name of the template
+msgid "Page with right sidebar"
+msgstr ""
+
+#: classes/class.redux-framework.php:79 classes/class.redux-framework.php:80
+msgid "Slidstvo Theme Options"
+msgstr ""
+
+#: classes/class.redux-framework.php:238
+msgid "Translations"
+msgstr ""
+
+#: classes/class.redux-framework.php:240
+msgid "Translation Settings"
+msgstr ""
+
+#: classes/class.redux-framework.php:247
+msgid "Show Language Switcher"
+msgstr ""
+
+#: classes/class.redux-framework.php:257
+msgid "Logo"
+msgstr ""
+
+#: classes/class.redux-framework.php:259
+msgid "Logo settings"
+msgstr ""
+
+#: classes/class.redux-framework.php:267
+msgid "Main logo"
+msgstr ""
+
+#: classes/class.redux-framework.php:275
+msgid "Main mobile logo"
+msgstr ""
+
+#: classes/class.redux-framework.php:288
+msgid "Contacts"
+msgstr ""
+
+#: classes/class.redux-framework.php:290
+msgid "Contacts settings"
+msgstr ""
+
+#: classes/class.redux-framework.php:299
+msgid "Contact info"
+msgstr ""
+
+#: classes/class.redux-framework.php:306
+msgid "Phone numbers"
+msgstr ""
+
+#: classes/class.redux-framework.php:307
+msgid "Format: (099) 999-99-99"
+msgstr ""
+
+#: classes/class.redux-framework.php:312
+msgid "Email"
+msgstr ""
+
+#: classes/class.redux-framework.php:321 classes/class.redux-framework.php:328
+msgid "Social profiles"
+msgstr ""
+
+#: classes/class.redux-framework.php:333
+msgid "Social links"
+msgstr ""
+
+#: classes/class.redux-framework.php:334
+msgid "Define and reorder the URL of your social networks."
+msgstr ""
+
+#: classes/class.redux-framework.php:358
+msgid "Footer"
+msgstr ""
+
+#: classes/class.redux-framework.php:365
+msgid "Footer Column"
+msgstr ""
+
+#: classes/class.redux-framework.php:380
+msgid "Copyright"
+msgstr ""
+
+#: classes/class.redux-framework.php:391
+msgid "Way For Pay API"
+msgstr ""
+
+#: classes/class.redux-framework.php:393
+msgid "Way For Pay API Credentials"
+msgstr ""
+
+#: classes/class.redux-framework.php:400
+msgid "Way For Pay User ID"
+msgstr ""
+
+#: classes/class.redux-framework.php:406
+msgid "Way For Pay User Secret Key"
+msgstr ""
+
+#: classes/class.redux-framework.php:412
+msgid "Way For Pay API Domain"
+msgstr ""
+
+#: classes/class.redux-framework.php:418
+msgid "Way For Pay Product Title"
+msgstr ""
+
+#: classes/class.functions.php:131
+msgid "Previous"
+msgstr ""
+
+#: classes/class.functions.php:132
+msgid "Next"
+msgstr ""
+
+#: classes/class.shortcodes.php:119 parts/donate.php:28
+msgid ""
+"Every day our team exposes corruption and investigates resonant crimes, but "
+"we need your support. Each of your hryvnia can be our new investigation."
+msgstr ""
+
+#: classes/class.shortcodes.php:122 parts/donate.php:31
+msgid "One time"
+msgstr ""
+
+#: classes/class.shortcodes.php:125 parts/donate.php:34
+msgid "Monthly"
+msgstr ""
+
+#: classes/class.shortcodes.php:128
+msgid "Halfyearly"
+msgstr ""
+
+#: classes/class.shortcodes.php:131
+msgid "Yearly"
+msgstr ""
+
+#: classes/class.shortcodes.php:128 parts/donate.php:37
+msgid "50 UAH"
+msgstr ""
+
+#: classes/class.shortcodes.php:131 parts/donate.php:40
+msgid "200 UAH"
+msgstr ""
+
+#: classes/class.shortcodes.php:134 parts/donate.php:43
+msgid "500 UAH"
+msgstr ""
+
+#: classes/class.shortcodes.php:137 parts/donate.php:46
+msgid "other"
+msgstr ""
+
+#: classes/class.shortcodes.php:140 parts/donate.php:49
+msgid "first name"
+msgstr ""
+
+#: classes/class.shortcodes.php:143 parts/donate.php:52
+msgid "last name"
+msgstr ""
+
+#: classes/class.shortcodes.php:167
+msgid "Phone number"
+msgstr ""
+
+#: classes/class.shortcodes.php:149 parts/donate.php:58
+msgid "donate"
+msgstr ""
+
+#: parts/pagetitle-external.php:23
+msgid "Authors:"
+msgstr ""
+
+#: parts/related-posts-special-projects.php:12
+msgid "Other important materials"
+msgstr ""
+
+#: parts/post-bottom.php:35 parts/post-bottom-article.php:23
+msgid "Join us on telegram"
+msgstr ""
+
+#: parts/post-bottom-news.php:22
+msgid "Join us"
+msgstr ""
+
+#: parts/related-posts-pravosyllia.php:13
+msgid "Stories from behind the grid"
+msgstr ""
+
+#: parts/breadcrumbs.php:5
+msgid "Home"
+msgstr ""
+
+#: parts/related-video-posts.php:40 parts/related-posts.php:14
+msgid "Related posts"
+msgstr ""
+
+#: parts/video-bottom.php:3
+msgid "cast:"
+msgstr ""
+
+#: parts/additional-materials.php:14
+msgid "Additional materials"
+msgstr ""
+
+#. Name of the theme
+msgid "slidstvo.info"
+msgstr ""
+
+#. Description of the theme
+msgid "Theme"
+msgstr ""
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "http://webolatory.com/"
+msgstr ""
+
+#. Author of the theme
+msgid "Webolatory Team"
+msgstr ""

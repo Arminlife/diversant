@@ -1,0 +1,168 @@
+//- Диверсанти — fullpage-інтро. Анімація керується скролом (див. components/diversanty-intro.js)
+
+.diversanty_intro {
+	position: relative;
+	height: 560vh; // довжина скролу інтро (менше = динамічніше)
+	background: #000;
+
+	&__sticky {
+		position: sticky;
+		top: 0;
+		overflow: hidden;
+		height: 100vh;
+		background: #000;
+	}
+
+	&__stage {
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+	}
+
+	// --- текстові кадри ---
+	&__line {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		width: min(90rem, 88vw);
+		margin: 0;
+
+		font-family: $font_2;
+		font-weight: 300;
+		font-size: 5rem;
+		line-height: 1.5;
+		text-align: center;
+		color: #fff;
+
+		opacity: 0; // керується JS
+		will-change: opacity, transform;
+
+		&--ru_mod {
+			font-style: italic;
+			color: #d9d9d6;
+		}
+	}
+
+	// --- фото ляльки ---
+	&__photo {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+
+		opacity: 0; // керується JS
+		will-change: opacity, transform;
+	}
+
+	&__photo_img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 42%;
+	}
+
+	&__veil {
+		position: absolute;
+		inset: 0;
+		background:
+			radial-gradient(120% 90% at 50% 55%, transparent 38%, rgba(#000, 0.55) 100%),
+			linear-gradient(180deg, rgba(#000, 0.35) 0%, transparent 30%, transparent 70%, rgba(#000, 0.45) 100%);
+	}
+
+	// --- заголовок-хук ---
+	&__title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		width: 92vw;
+		margin: 0;
+
+		font-family: $font_2;
+		font-weight: 400;
+		font-size: 5rem;
+		line-height: 0.92;
+		letter-spacing: 0.015em;
+		text-align: center;
+		text-transform: uppercase;
+		color: $white;
+		text-shadow: 0 0.6rem 4rem rgba(#000, 0.6);
+
+		opacity: 0; // керується JS
+		will-change: opacity, transform;
+
+		&:last-child {
+			font-size: 13rem;
+			font-family: $font_3;
+		}
+	}
+
+	// --- підказка «прокрутіть» ---
+	&__hint {
+		position: absolute;
+		bottom: clamp(2rem, 5vh, 4.8rem);
+		left: 50%;
+		transform: translateX(-50%);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+
+		font-size: 1.2rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: rgba(#fff, 0.7);
+
+		will-change: opacity;
+	}
+
+	&__hint_arrow {
+		width: 1.8rem;
+		height: 1.8rem;
+		border-right: 2px solid currentColor;
+		border-bottom: 2px solid currentColor;
+		animation: diversanty_hint_bounce 2.4s ease-in-out infinite;
+	}
+}
+
+@keyframes diversanty_hint_bounce {
+	0%,
+	100% {
+		transform: translateY(0) rotate(45deg);
+		opacity: 0.55;
+	}
+	50% {
+		transform: translateY(0.6rem) rotate(45deg);
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.diversanty_intro__hint_arrow {
+		animation: none;
+	}
+}
+
+
+.diversanty_page {
+	display: block;
+	height: auto;
+	background: #cdcdcd;
+
+	.header {
+		position: sticky;
+		top: 0;
+		overflow-x: clip; // у хедері є елемент, ширший за екран → клікаємо, щоб не було горизонт. скролу (sticky не ламає)
+		background: #cdcdcd;
+	}
+
+	main,
+	.base {
+		padding-top: 0 !important;
+	}
+}

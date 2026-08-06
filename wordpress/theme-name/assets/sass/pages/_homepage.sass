@@ -1,0 +1,663 @@
+/* main news block
+//main
+//	padding-top: 20px
+.home
+	.vc_row-has-fill>.vc_column_container>.vc_column-inner
+		padding-top: 0
+	.vc_custom_1561113199710
+		background: #fff!important
+		padding-bottom: 0!important
+
+	.vc_custom_1584434149321
+		//background-color: $color-light-grey!important
+		//margin-bottom: 50px
+	//.container
+	//	max-width: 1244px
+
+.news-block
+	display: flex
+	padding-top: 30px
+	position: relative
+.more-news
+	width: 260px
+.news-block-title
+	position: relative
+	font-family: var(--font-rc)
+	font-size: 20px
+	text-transform: uppercase
+	color: $color-secondary
+	font-weight: 600
+	padding-bottom: 8px
+	margin-bottom: 20px
+	//margin-left: 20px
+	&:before
+		//position: absolute
+		//content: ""
+		//background: #222
+		//width: 10px
+		//height: 10px
+		//left: -20px
+		//border-radius: 50%
+		//top: 40%
+		///* padding-left: 21px; */
+		//transform: translateY(-50%)
+
+.block-title
+	@extend .news-block-title
+	//font-family: var(--font-rc)
+	//font-weight: 600
+	//text-transform: uppercase
+	//color: var(--color-dimmed)
+	//font-size: var(--block-title-fs)
+
+.news-block-main-news
+	display: -webkit-flex
+	display: flex
+	width: 45%
+	margin-right: 25px
+	-webkit-flex-direction: column
+	-moz-flex-direction: column
+	flex-direction: column
+	//position: relative
+	height: 100%
+
+.news-block-main-article
+	background-size: 100% auto
+	background-position: 50% 50%
+	background-repeat: no-repeat
+	//&:nth-child(4)
+	//	display: none
+	.background
+		width: 100%
+		overflow: hidden
+		position: relative
+		//height: 420px
+	&:hover .image
+		-webkit-transform: scale(var(--hover-scale-coef))
+		transform: scale(var(--hover-scale-coef))
+
+	.background .image
+		width: 100%
+		height: 100%
+		background-size: cover
+		transition: -webkit-transform var(--transition-time) var(--transition-function)
+		transition: transform var(--transition-time) var(--transition-function)
+		transition: transform var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function)
+
+		img
+			min-height: 100%
+			max-width: unset
+			width: 100%
+			position: relative
+			object-fit: cover
+			left: 50%
+			-webkit-transform: translateX(-50%)
+			transform: translateX(-50%)
+
+	a
+		padding: 0
+		h2
+			padding-top: 10px
+			font-family: var(--font-rc)
+			text-transform: uppercase
+			font-weight: 600
+			font-size: 18px
+			color: #333
+			&:hover
+				text-decoration: underline
+
+		p
+			font-family: var(--font-main)
+
+	.post_excerpt
+		font-family: var(--font-main)
+		text-decoration: none !important
+		font-size: 16px
+		margin-bottom: 0
+		color: $color-dimmed
+
+/*----------Top three news block-------------*/
+.news-block-top-three
+	margin-top: 10px
+	article
+		border-bottom: 1px dotted #ccc
+		&:last-of-type
+			border: none
+			//margin-bottom: 25px
+
+.top-three-item, .news-video-block
+	.post_excerpt
+		font-family: var(--font-secondary)
+		margin-bottom: 10px
+		color: $color-dimmed
+		font-size: 16px
+		line-height: normal
+		overflow: hidden
+.top-three-item
+	display: flex
+	padding: 3px 0
+	.img-wrap
+		width: 35%
+		min-width: 35%
+		height: 104px
+		overflow: hidden
+		position: relative
+		margin: 12px 10px 12px 0
+		a
+			width: 100%
+			display: block
+			font-size: 0
+			height: 100%
+			padding-bottom: 0
+			//overflow: hidden
+			//padding-bottom: 56%
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				object-position: center center
+				transition: all 0.3s ease-in-out
+				&:hover
+					-webkit-transform: scale(1.05)
+					transform: scale(1.05)
+
+.img-wrap
+	width: 35%
+	min-width: 35%
+	position: relative
+	margin: 12px 10px 12px 0
+	a
+		width: 100%
+		display: block
+		font-size: 0
+		height: 0
+		overflow: hidden
+		padding-bottom: 56%
+		img
+			width: 100%
+			height: auto
+			//object-fit: cover
+			//object-position: center center
+			transition: all 0.3s ease-in-out
+			&:hover
+				-webkit-transform: scale(1.05)
+				transform: scale(1.05)
+.top-news-title
+	font-family: var(--font-rc)
+	margin-top: 9px
+	line-height: 1.4
+	font-weight: 600
+	text-transform: uppercase
+	font-size: 16px
+	color: #333
+	&:hover
+		text-decoration: underline
+.news-title-link
+		font-family: var(--font-rc)
+		font-size: 18px
+		font-weight: normal
+		color: var(--color-dimmed)
+		transition: all 0.2s ease-in-out
+		&:hover
+			text-decoration: underline
+
+/* .news-block-main-article:hover {
+ *    background-size: 115% auto;
+ *}
+
+/* .news-block-main-article a:before {
+ *    content: "";
+ *    display: block;
+ *    position: absolute;
+ *    top: 0;
+ *    right: 0;
+ *    bottom: 0;
+ *    left: 0;
+ *}
+
+/* news block list
+.news-block-right-col
+	display: flex
+	width: 55%
+.news-block-articles
+	padding: 0 14px 14px 14px
+	width: 50%
+.news-video-block
+	width: 50%
+.news-block-articles-list
+	//background-color: #fff
+	margin-bottom: 18px
+	margin-top: -10px
+	//display: -webkit-flex
+	//display: flex
+	//-webkit-flex-direction: column
+	//flex-direction: column
+	//-webkit-justify-content: space-between
+	//justify-content: space-between
+
+	article
+		&:last-child
+			border-bottom: none
+		&:first-child
+			padding-top: 0
+			border-top: none
+
+/* .news-block-articles-list a {
+.news-block-article
+	border-bottom: 1px dotted $color-secondary
+	//border-top: 1px dotted $color-secondary
+	padding: 12px 0
+	a h2
+		color: #333
+		font-family: var(--font-rc)
+		text-transform: uppercase
+		font-size: 15px
+
+		&:hover
+			text-decoration: underline
+
+.news-block-articles-list
+	a h2
+		//color: var(--color-secondary)
+		//font-family: var(--font-rc)
+		//font-weight: 600
+		//text-transform: uppercase
+		//font-size: 15px
+
+	.post_excerpt
+		font-family: var(--font-main)
+		margin-bottom: 0
+		color: #000
+		font-size: 16px
+		line-height: normal
+		max-height: 2.6em
+		overflow: hidden
+
+	.date
+		font-family: var(--font-secondary)
+		color: var(--color-dimmed)
+		font-size: 14px
+
+.more-news
+	display: block
+	background-color: var(--color-button-primary)
+	color: #F8F8F8
+	text-transform: uppercase
+	font-size: 20px
+	border-radius: 1em
+	text-align: center
+	border: none
+	font-weight: 500
+	padding: 5px 0
+
+.news-block-articles .more-news:hover
+	opacity: .8
+
+/*News video block*/
+.news-video-block
+	padding: 0 14px 14px 14px
+	.banner
+		padding: 15px 0
+	.video-thumb
+		position: relative
+		margin: 12px 10px 12px 0
+		&:before
+			position: absolute
+			top: 0
+			left: 0
+			content: "\f235"
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 35px
+			height: 25px
+			font-family: 'Dashicons'
+			font-size: 20px
+			background: rgba(0,0,0, 0.5)
+			z-index: 10
+			color: #fff
+		&:hover
+			&:before
+				background: rgba(0,0,0, 0.8)
+		a
+			//display: block
+			font-size: 0
+			height: 0
+			overflow: hidden
+
+			img
+				width: 100%
+				height: auto
+				transition: all 0.3s ease-in-out
+				&:hover
+					-webkit-transform: scale(var(--hover-scale-coef))
+					transform: scale(var(--hover-scale-coef))
+.video-block-main
+	width: 100%
+	h3
+		@extend .top-news-title
+		line-height: 1.5
+
+	.video-thumb
+		overflow: hidden
+		a
+			padding-bottom: 56%
+	.post_excerpt
+		font-family: var(--font-main)
+		line-height: 1.5
+
+.video-blocks
+	display: flex
+	.video-thumb
+		max-width: 50%
+		a
+			height: 95px
+			img
+				//height: 100%
+				//width: 100%
+				//object-fit: cover
+				&:hover
+					-webkit-transform: none
+					transform: none
+			&:before
+				width: 30px
+				height: 25px
+				font-size: 20px
+
+	h3
+		@extend .top-news-title
+		font-size: 15px
+	.post_excerpt
+		font-size: 14px
+
+.specprojects-right-block
+	width: 100%
+#js-specproject-slider
+	article
+		position: relative
+		height: 180px
+
+		h2
+			color: #fff
+			font-family: var(--font-rc)
+			text-decoration: inherit
+			font-size: 22px
+			max-width: 80%
+			margin: 0
+
+	.background
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 0
+		background-size: cover
+		background-repeat: no-repeat
+		transition: all var(--transition-time) var(--transition-function)
+
+		img
+			min-width: 100%
+			height: 100%
+			object-fit: cover
+
+		&:before
+			content: ""
+			position: absolute
+			display: block
+			width: 100%
+			height: 100%
+			z-index: 1
+			background: rgba(0, 0, 0, 0.35)
+			transition: all var(--transition-time) var(--transition-function)
+
+	a
+
+		position: relative
+		z-index: 2
+
+	article
+		overflow: hidden
+
+		a
+			display: -webkit-flex
+			display: flex
+			-webkit-justify-content: center
+			justify-content: center
+			-webkit-align-items: center
+			align-items: center
+			text-align: center
+			width: 100%
+			height: 100%
+			color: #fff
+			text-transform: uppercase
+
+		&:hover .background
+			&:before
+				background: rgba(0, 0, 0, 0.25)
+
+			-webkit-transform: scale(var(--hover-scale-coef))
+			transform: scale(var(--hover-scale-coef))
+
+
+/* additional materials block
+
+.additional-materials
+	margin: 30px auto
+	display: grid
+	-webkit-column-gap: 45px
+	column-gap: 20px
+	padding: 0
+
+	&.grid-1
+		grid-template-columns: 1fr
+
+	&.grid-2
+		grid-template-columns: 1fr 1fr
+
+	&.grid-3
+		grid-template-columns: 1fr 1fr 1fr
+
+	&.grid-4
+		grid-template-columns: 1fr 1fr 1fr 1fr
+
+	&.grid-5
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+
+	&.grid-6
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+
+	&.grid-7
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+
+	&.grid-8
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+
+	.background
+		overflow: hidden
+		position: relative
+
+		img
+			position: relative
+			height: auto
+			width: 100%
+			transition: -webkit-transform var(--transition-time) var(--transition-function)
+			transition: transform var(--transition-time) var(--transition-function)
+			transition: transform var(--transition-time) var(--transition-function), -webkit-transform var(--transition-time) var(--transition-function)
+			z-index: -1
+
+		&:hover img
+			/* background-size: 115% auto;
+			-webkit-transform: scale(var(--hover-scale-coef))
+			transform: scale(var(--hover-scale-coef))
+
+		h2
+			background-color: rgba(0, 0, 0, 0.25)
+			position: absolute
+			bottom: 0
+			font-family: var(--font-rc)
+			font-weight: 500
+			text-transform: uppercase
+			color: #fff
+			font-size: 19px
+			line-height: normal
+			padding: 10px 20px
+			margin-bottom: 0
+			text-decoration: inherit
+
+	p
+		padding: 10px 20px
+/* special projects
+#banner
+	.vc_custom_1561113305347
+		max-width: 1268px
+		margin: 0 auto
+.movies-block
+	//max-width: 1440px
+	//margin: 0 auto
+	padding: 30px 0
+	.block-title
+		@extend .news-block-title
+	//.movie-title
+	//	margin: 8px 25px
+	//	a
+	//		text-transform: uppercase
+	//		font-size: var( --block-title-fs)
+	//		transition: all 0.2s ease-in-out
+	//		&:hover
+	//			color: var(--color-secondary)
+	//			text-decoration: underline
+	.movie-item
+		margin-bottom: 15px
+		a
+			display: block
+			width: 225px
+			height: 335px
+			overflow: hidden
+			img
+				//object-fit: cover
+				width: 100%
+				//height: 100%
+
+// Worth knowing block
+//.post-title
+//	font-family: var(--font-rc)
+//	font-weight: 400
+//	font-size: 20px
+//	margin-top: 15px
+//	&:hover
+//		color: $color-secondary
+//
+
+.worth-knowing-block
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	color: var(--color-dimmed)
+	margin: 0 auto
+	padding-top: 30px
+	.image
+		max-height: 200px
+		overflow: hidden
+		img
+			transition: all 0.4s ease-in-out
+		&:hover
+			img
+				-webkit-transform: scale(var(--hover-scale-coef))
+				transform: scale(var(--hover-scale-coef))
+
+	.worth-knowing-item
+		width: 29%
+		margin-right: 25px
+		&.about-members
+			margin-right: 0
+
+	.worth-knowing-article
+		margin: 20px 0
+		h3
+			@extend .top-news-title
+			margin-top: 15px!important
+
+.vc_custom_1553181195963
+	background: #fff!important
+.special-projects
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	padding: 15px 0 50px 0
+	-webkit-column-gap: 40px
+	column-gap: 6%
+	justify-items: center
+	width: 100%!important
+	margin: 0 auto
+
+.post-type-archive-special-projects .post_date
+	display: none
+
+
+.special-projects
+	.block-title
+		margin-bottom: 10px
+	> .container
+		grid-column: 1 / -1
+		margin: 0
+	a.btn-primary
+		margin-top: 10px
+	article
+		position: relative
+
+		h2
+			color: #fff
+			font-family: var(--font-rc)
+			text-decoration: inherit
+			font-size: 26.5px
+			max-width: 80%
+			margin: 0
+
+	.background
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 0
+		background-size: cover
+		background-repeat: no-repeat
+		transition: all var(--transition-time) var(--transition-function)
+
+		img
+			min-width: 100%
+			height: 100%
+
+		&:before
+			content: ""
+			position: absolute
+			width: 100%
+			height: 100%
+			z-index: 1
+			background: rgba(0, 0, 0, 0.35)
+			transition: all var(--transition-time) var(--transition-function)
+
+	a
+		position: relative
+		z-index: 2
+
+	article
+		overflow: hidden
+
+		a
+			display: -webkit-flex
+			display: flex
+			-webkit-justify-content: center
+			justify-content: center
+			-webkit-align-items: center
+			align-items: center
+			text-align: center
+			width: 100%
+			height: 100%
+			color: #fff
+			text-transform: uppercase
+
+		&:hover .background
+			&:before
+				background: rgba($color-secondary, 0.8)
+
+			-webkit-transform: scale(var(--hover-scale-coef))
+			transform: scale(var(--hover-scale-coef))
+#about-homepage
+	margin: 0

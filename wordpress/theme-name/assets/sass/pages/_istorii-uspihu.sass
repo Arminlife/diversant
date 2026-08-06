@@ -1,0 +1,837 @@
+.s-stories
+  text-align: center
+  background-color: #F2F2F4
+  padding-bottom: 96px
+  &__top
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    padding: 96px 0 72px 0
+    font-family: $font-main
+  &__title
+    color: $dark-color
+    font-size: 60px
+    line-height: 1.2
+    margin-bottom: 24px
+    text-transform: uppercase
+  &__slogan
+    color: $dark-color
+    font-size: 23px
+    line-height: 1.4
+    font-family: inherit
+    display: none
+    &.active
+      display: block
+
+
+  &__headline
+    padding-bottom: 176px
+  &__tabs
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: #fff
+    list-style: none
+    height: 64px
+    -webkit-border-radius: 32px
+    -moz-border-radius: 32px
+    border-radius: 32px
+    border: 2px solid $dark-color
+    padding: 8px
+    margin-bottom: 0
+  &__tab
+    display: block
+    height: 100%
+    width: calc(33% - 4px)
+  &__tab-link
+    position: relative
+    display: flex
+    align-items: center
+    align-content: center
+    justify-content: center
+    height: 100%
+    border-radius: 32px
+    font-family: inherit
+    font-size: 20px
+    color: $dark-color
+    text-transform: uppercase
+    font-weight: 600
+    overflow: hidden
+    &:before
+      display: block
+      position: absolute
+      content: ''
+      width: 50%
+      height: 100%
+      background: rgba(0,0,0, 0)
+      -webkit-border-radius: 32px
+      -moz-border-radius: 32px
+      border-radius: 32px
+      transition: all .4s ease-in-out
+    &.active
+      background: $dark-color
+      height: inherit
+      color: #fff
+      pointer-events: none
+    &.disable
+      pointer-events: none
+      opacity: .5
+    &:hover
+      &:before
+        display: block
+        width: 100%
+        background: rgba(0,0,0, .05)
+  &__notification
+    position: fixed
+    width: 262px
+    height: 170px
+    bottom: 0
+    right: 16px
+    z-index: 20
+  .notification-inner
+    position: relative
+    .button-tell-us
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: center
+      bottom: 15px
+      right: 85px
+      z-index: 11
+      width: 148px
+      height: 40px
+      border: 2px solid $dark-color
+      -webkit-border-radius: 20px
+      -moz-border-radius: 20px
+      border-radius: 20px
+      background-color: #fff
+      font-family: $font-secondary
+      font-size: 15px
+      font-weight: 600
+      color: $dark-color
+      text-transform: uppercase
+      transition: all 0.2s ease-in-out
+      outline: none
+      &:hover
+        background-color: $color-secondary-accent
+        color: #fff
+        border: 2px solid $color-secondary-accent
+
+@keyframes slideUpp
+  0%
+    display: block
+  100%
+    opacity: 1
+    visibility: visible
+    top: 0
+    transition: .3s all ease-in-out
+.s-stories__notification
+  position: fixed
+  width: 262px
+  height: 157px
+  bottom: 0
+  right: 16px
+  .notification-inner
+    position: relative
+    .button-tell-us
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: center
+      bottom: 15px
+      right: 85px
+      z-index: 11
+      width: 148px
+      height: 40px
+      border: 2px solid $dark-color
+      -webkit-border-radius: 20px
+      -moz-border-radius: 20px
+      border-radius: 20px
+      background-color: #fff
+      font-family: $font-secondary
+      font-size: 15px
+      font-weight: 600
+      color: $dark-color
+      text-transform: uppercase
+      transition: all 0.2s ease-in-out
+      outline: none
+      &:hover
+        background-color: $color-secondary-accent
+        color: #fff
+        border: 2px solid $color-secondary-accent
+.s-stories-posts
+  padding: 72px 0 32px 0
+  max-width: 1728px
+  display: flex
+  flex-wrap: wrap
+  margin: 0 auto
+  position: relative
+  &:before
+
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: #fff
+    opacity: .5
+    z-index: 5
+
+  &.load
+    &:before
+      content: ''
+  &__post
+    width: calc(33.33% - 24px)
+    background-color: #fff
+    margin: 0 12px 24px 12px
+    -webkit-border-radius: 8px
+    -moz-border-radius: 8px
+    border-radius: 8px
+    overflow: hidden
+    &.video-post
+      transition: all .5s ease-in-out
+      .video-icon
+        position: absolute
+        z-index: 10
+        top: 35%
+        svg
+          transition: all .4s ease-in-out
+          .a
+            fill: $color-secondary-accent
+          .b
+            fill: #fff
+      &:hover
+        .video-icon
+          svg
+            transform: rotate(360deg)
+            .a
+              fill: #fff
+            .b
+              fill: $color-secondary-accent
+        .s-stories-posts__thumbnail
+          &:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: rgba(0,0,0, .5)
+
+    &:hover
+      box-shadow: 0px 8px 24px rgba(0, 0, 0, .2)
+      cursor: pointer
+      .s-stories-posts__post-title
+        color: $color-secondary-accent
+  &__thumbnail
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-bottom: 56.2%
+    //height: 352px
+    img
+      position: absolute
+      object-fit: cover
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      object-position: center center
+  &__post-data
+    padding: 32px 40px
+    text-align: left
+    color: $post-text-color
+  &__post-title
+    font-family: $font-rc
+    font-weight: 600
+    font-size: 20px
+    line-height: 1.6
+    margin-bottom: 16px
+    transition: all 0.2s ease-in-out
+  &__excerpt, p
+    font-family: $font-secondary
+    font-weight: 400
+    font-size: 15px
+    //line-height: 1.3
+    margin-bottom: 20px
+  &__post-date
+    font-family: $font-secondary
+    font-weight: 400
+    opacity: 0.32
+    font-size: 15px
+    line-height: 1.3
+  &__load-more-btn
+    margin: 0 auto 96px auto
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 358px
+    height: 56px
+    font-weight: 600
+    font-family: $font-secondary
+    font-size: 15px
+    //margin-top: 32px
+    line-height: 1
+    text-transform: uppercase
+    border: 2px solid $post-text-color
+    -webkit-border-radius: 28px
+    -moz-border-radius: 28px
+    border-radius: 28px
+    transition: all .2s ease-in-out
+    &.load
+      pointer-events: none
+      background-color: $dark-color
+      color: #fff
+      opacity: .5
+    &:hover
+      background-color: $dark-color
+      color: #fff
+@keyframes slide
+  100%
+    top: 0
+
+.s-stories-bottom-block
+  max-width: 1728px
+  padding: 96px 0
+  width: 98%
+  background-color: #fff
+  margin: 0 auto
+  -webkit-border-radius: 8px
+  -moz-border-radius: 8px
+  border-radius: 8px
+  color: $post-text-color
+  display: none
+  &.active
+    display: block
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    text-align: left
+    &.the-second-block
+      margin-top: 120px
+  &__wwh-contact
+    flex-basis: 30%
+  &__logos
+    flex-basis: 30%
+  &__content
+    flex-basis: 70%
+
+  &__stn-title
+    font-family: $font-rc
+    font-weight: 600
+    font-size: 40px
+    line-height: 1
+    margin-bottom: 56px
+  &__logo
+    margin-bottom: 26px
+  &__contacts
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    margin-bottom: 30px
+
+  &__headline
+    font-family: $font-rc
+    font-size: 26px
+    font-weight: 400
+    line-height: 1.2
+    margin-bottom: 20px
+    margin-top: 4px
+    &.contacts-headline
+      font-weight: 600
+      margin-bottom: 40px
+  &__text
+    font-family: $font-secondary
+    font-weight: 400
+    font-size: 20px
+    line-height: 1.6
+    margin: 0
+    ol, ul, dt
+      padding-left: 20px
+    *
+      &:last-child
+        margin: 0
+  &__labels
+    display: block
+    font-size: 16px
+    line-height: 1.5
+    font-weight: 400
+    color: $dark-color
+    opacity: 0.56
+    margin-bottom: 16px
+  &__contacts-link
+    position: relative
+    display: inline-block
+    font-family: $font-rc
+    font-size: 20px
+    color: $dark-color
+    text-transform: uppercase
+    &:after
+      position: absolute
+      bottom: -2px
+      content: ''
+      display: block
+      width: 100%
+      height: 2px
+      background-color: $dark-color
+      transition: all 0.3s ease-in-out
+    &:hover
+      &:after
+        height: 4px
+  &__phone
+    margin-bottom: 32px
+
+.tell-your-story-popup
+  &__popup
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba($color: #000000, $alpha: .56)
+    overflow-y: auto
+    padding: 35px
+    z-index: 100
+    display: none
+    &.active
+      display: flex
+    .wpcf7-form-control-wrap
+      width: calc(50% - 14px)
+      display: block
+      &.file-922
+        width: 0
+        height: 0
+      &.your-name
+        margin-right: 28px
+      .tell-your-story-popup__frm-control
+        width: 100%
+        height: 56px
+        padding: 0 24px
+        border: 1px solid #BCBCBC
+        -webkit-border-radius: 28px
+        -moz-border-radius: 28px
+        border-radius: 28px
+        font-family: $font-secondary
+        font-size: 15px
+        color: rgba($dark-color, 0.56)
+        outline: none
+        margin-bottom: 24px
+        &::placeholder
+          font-family: $font-secondary
+          font-size: 15px
+          color: rgba($dark-color, 0.56)
+      &.your-message
+        width: 100%
+        textarea
+          height: 104px
+          resize: none
+          padding: 18px 24px
+    .form-bottom
+      display: flex
+      justify-content: space-between
+      align-items: center
+      a
+        text-decoration: underline
+      span
+        font-size: 14px
+      span.ajax-loader
+        display: none
+  &__inner
+    position: relative
+    input[type="submit"].wpcf7-submit
+      font: normal normal bold 15px/24px $font-secondary
+      color: #FFFFFF
+      padding: 16px 44px
+      background-color: #B3292D
+      border-radius: 28px
+      outline: none
+      border: 2px solid $color-secondary-accent
+      text-transform: uppercase
+      transition: .3s background-color ease, .3s color ease
+      &:hover
+        background-color: #1a1a1a
+        color: #fff
+        border: 2px solid $dark-color
+  &__close
+    position: absolute
+    top: 24px
+    right: 24px
+    width: 40px
+    height: 40px
+    padding: 0
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    border: none
+    outline: none!important
+    &:focus, &:active
+      outline: none!important
+    &:before
+      content: url("../../img/close.svg")
+      position: absolute
+      width: 40px
+      height: 40px
+      line-height: 1
+      top: 0
+      left: 0
+      display: flex
+      align-items: center
+      justify-content: center
+
+  &__btn
+    font: normal normal bold 15px/24px $font-secondary
+    color: #231F20
+    padding: 16px 44px
+    background-color: transparent
+    border-radius: 28px
+    outline: none
+    border: 2px solid #231F20
+    text-transform: uppercase
+    transition: .3s background-color ease, .3s color ease
+    margin-bottom: 0
+    &--hide
+      display: none
+    &:hover
+      background-color: #1a1a1a
+      color: #fff
+      cursor: pointer
+  &__inner
+    background-color: #fff
+    margin: auto
+    max-width: 1268px
+    width: 100%
+    padding: 72px 0
+    position: relative
+    border-radius: 8px
+    transition: .3s all
+    background-image: url("../../img/surikat-head.svg")
+    background-repeat: no-repeat
+    background-position: 24px 100%
+    .form-wrap
+      max-width: 836px
+      width: 100%
+      margin: 0 auto
+      form p
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start
+
+  &__headlines
+    margin-bottom: 53px
+    text-align: center
+    h3
+      font-family: $font-rc
+      font-size: 48px
+      font-weight: 600
+      line-height: 1.3
+      color: $dark-color
+      margin-bottom: 16px
+    p
+      font-family: $font-secondary
+      font-size: 20px
+      line-height: 1.6
+
+
+@media screen and (max-width: 1440px)
+  .s-stories
+    &__top
+      padding: 80px 0 62px 0
+    &__title
+      font-size: 56px
+    &__slogan
+      font-size: 20px
+    &__headline
+      padding-bottom: 156px
+    &__tabs
+      height: 60px
+    &__tab-link
+      font-size: 18px
+
+
+  .s-stories-bottom-block
+    &__content
+      margin-left: 80px
+    &__stn-title
+      font-size: 30px
+    &__logo
+      margin-bottom: 26px
+    &__headline
+      font-size: 22px
+      margin-bottom: 20px
+      margin-top: 4px
+    &__text
+      font-size: 16px
+
+  .s-stories-posts
+    &__thumbnail
+      height: 230px
+
+@media screen and (max-width: 1200px)
+  .s-stories
+    &__top
+      padding: 70px 0 52px 0
+    &__title
+      font-size: 50px
+    &__headline
+      padding-bottom: 136px
+
+  .s-stories-posts
+    padding: 60px 0 0 0
+    &__post
+      width: calc(50% - 24px)
+    &__thumbnail
+      //height: 320px
+    &__post-data
+      padding: 26px 28px
+
+  .s-stories-bottom-block
+    &__wrapper
+      padding: 0 24px
+
+  .tell-your-story-popup
+    &__headlines
+      h3
+        font-size: 40px
+      p
+        font-size: 20px
+
+
+@media screen and (max-width: 992px)
+  .s-stories
+    &__top
+      padding: 60px 0 46px 0
+    &__title
+      font-size: 48px
+    &__slogan
+      font-size: 18px
+    &__headline
+      padding-bottom: 146px
+    &__tabs
+      height: 54px
+      margin: 0 24px
+    &__tab-link
+      font-size: 16px
+
+  .s-stories-posts
+    &__thumbnail
+      //height: 260px
+    &__load-more-btn
+      font-size: 14px
+      height: 48px
+      width: 300px
+      margin-bottom: 50px
+
+  .s-stories-bottom-block
+    &__wrapper
+      &.the-second-block
+        margin-top: 60px
+    &__stn-title
+      font-size: 24px
+    &__contacts
+      justify-content: flex-start
+    &__text
+      font-size: 15px
+    &__labels
+      font-size: 15px
+      margin-bottom: 10px
+    &__contacts-link
+      font-size: 16px
+    &__content
+      &.initiatives
+        margin-left: 30px
+  .tell-your-story-popup
+    &__headlines
+      h3
+        font-size: 36px
+      p
+        font-size: 18px
+    &__inner
+      padding: 72px 30px
+    &__btn
+      font-size: 14px
+      padding: 16px 20px
+      text-align: center
+      min-width: 200px
+      margin-right: 15px
+  .tell-your-story-popup__inner input[type=submit].wpcf7-submit
+    font-size: 14px
+    padding: 16px 20px
+    text-align: center
+    min-width: 200px
+
+
+@media screen and (max-width: 768px)
+  .s-stories
+    &__top
+      padding: 60px 0 46px 0
+    &__title
+      font-size: 36px
+    &__slogan
+      font-size: 16px
+    &__headline
+      padding-bottom: 86px
+    &__tabs
+      height: auto
+      margin: 0 18px
+      flex-direction: column
+      padding: 0
+    &__tab
+      width: 100%
+      &:first-child
+        .s-stories__tab-link
+          border-top-right-radius: 28px
+          border-top-left-radius: 28px
+          &:before
+            border-top-right-radius: 28px
+            border-top-left-radius: 28px
+      &:last-child
+        .s-stories__tab-link
+          border-bottom-right-radius: 28px
+          border-bottom-left-radius: 28px
+          border-bottom: 1px solid rgba(0,0,0,.05)
+          &:before
+            border-bottom-right-radius: 28px
+            border-bottom-left-radius: 28px
+    &__tab-link
+      font-size: 14px
+      padding: 10px 0
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+      border-top: 1px solid rgba(0,0,0,.05)
+      border-right: 1px solid rgba(0,0,0,.05)
+      border-left: 1px solid rgba(0,0,0,.05)
+      &:before
+        width: 50%
+        height: 100%
+        background: rgba(0,0,0, 0)
+        -webkit-border-radius: 0
+        -moz-border-radius: 0
+        border-radius: 0
+
+  .s-stories-posts
+    &__load-more-btn
+      font-size: 14px
+      height: 48px
+      width: 300px
+
+  .s-stories-bottom-block
+    &__stn-title
+      font-size: 24px
+    &__text
+      font-size: 15px
+    &__wwh-contact
+      margin-bottom: 24px
+
+  .tell-your-story-popup
+    &__popup
+
+    &__headlines
+      h3
+        font-size: 30px
+      p
+        font-size: 16px
+      .form-bottom
+        flex-wrap: wrap
+        justify-content: flex-end
+        span
+          width: 100%
+          margin-bottom: 25px
+          text-align: right
+
+@media screen and (max-width: 768px) and (min-width: 720px)
+  .s-stories-bottom-block
+    &__content
+      &.initiatives
+        margin-left: 30px
+
+@media screen and (max-width: 719px)
+  .s-stories-bottom-block
+    &__wrapper
+      flex-direction: column
+    &__content
+      margin-left: 0
+      &.initiatives
+        margin-left: 0
+    &__headline
+      font-size: 18px
+    &__stn-title
+      margin-bottom: 30px
+
+  .tell-your-story-popup
+    &__popup
+      .form-bottom
+        flex-wrap: wrap
+        justify-content: flex-end
+        span
+          width: 100%
+          margin-bottom: 25px
+          text-align: right
+      .wpcf7-form-control-wrap
+        width: 100%
+        &.your-name
+          margin-right: 0
+    &__headlines
+      margin-bottom: 20px
+      h3
+        font-size: 25px
+        margin-bottom: 8px
+      p
+        font-size: 15px
+    &__btn
+      font-size: 13px
+      padding: 12px 20px
+  .tell-your-story-popup__inner input[type=submit].wpcf7-submit
+    padding: 12px 20px
+    font-size: 13px
+
+@media screen and (max-width: 680px)
+  .s-stories-posts
+    &__post
+      width: calc(100% - 24px)
+    &__thumbnail
+      //height: 300px
+
+@media screen and (max-width: 560px)
+  .tell-your-story-popup
+    &__popup
+      .form-bottom
+        width: 90%
+        justify-content: center
+        margin: 0 auto
+        span
+          text-align: center
+    &__btn
+      margin-bottom: 15px
+      margin-right: 0
+  .tell-your-story-popup__popup .wpcf7-form-control-wrap.your-message textarea
+    margin-bottom: 12px
+
+
+@media screen and (max-width: 400px)
+  .s-stories-posts
+    &__thumbnail
+      //height: 200px
+  .tell-your-story-popup
+    &__popup
+      padding: 62px 15px
+    &__btn
+      margin-bottom: 5px
+    &__close
+      top: 15px
+      right: 15px
+      width: 30px
+      height: 30px
+      &:before
+        width: 30px
+        height: 30px
+
+
+.single-success-stories
+  position: relative

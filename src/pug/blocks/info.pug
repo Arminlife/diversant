@@ -1,0 +1,23 @@
+-	
+	tagsList = ['Укриття' , 'Київ', 'КМДА']
+	iconsList = ['facebook', 'telegram', 'x', 'tiktok', 'whatsapp', 'copy']
+
+section.section.info.section--border_mod
+	.section_in.section_in--border_mod
+		.info__cols
+			.info__col
+				.info__col_content
+					.info__col_title Теги:
+					ul.info__tags
+						each tag in tagsList
+							li.info__tags_item
+								a.info__tag(href="#")= tag
+			.info__col
+				.info__col_content
+					.info__col_title Поширити публікацію:
+					.info__share
+						ul.info__share_list
+							each icon in iconsList
+								li.info__share_item
+									a.info__share_link(href="#")
+										+icon(icon)

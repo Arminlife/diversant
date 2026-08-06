@@ -1,0 +1,394 @@
+include ../templates/mixins/m-stars
+include ../templates/mixins/m-image-upload
+include ../templates/mixins/m-audioplayer
+
+-
+	labels = [
+		{
+			icon: 'images/map/location.svg',
+			label: 'Укриття'
+		},
+		{
+			icon: 'images/map/zoom-money.svg',
+			label: 'Найдорожчі укриття'
+		},
+		{
+			icon: 'images/map/building.svg',
+			label: 'Зруйновані будинки'
+		},
+		{
+			icon: 'images/map/horse.svg',
+			label: 'Місце загибелі дитини'
+		},
+	]
+
+-
+	filters = [
+		{
+			icon: 'adjustments',
+			title: 'Райони',
+			list: [
+				{filter: 'all', key: 'all', label: 'Обрати всі райони' },
+				{filter: 'district', key: 'holosiivskyy', label: 'Голосіївський' },
+				{filter: 'district', key: 'darnytskyy', label: 'Дарницький' },
+				{filter: 'district', key: 'desnianskyy', label: 'Деснянський' },
+				{filter: 'district', key: 'dniprovskyy', label: 'Дніпровський' },
+				{filter: 'district', key: 'obolonskyy', label: 'Оболонський' },
+				{filter: 'district', key: 'pecherskyy', label: 'Печерський' },
+				{filter: 'district', key: 'podilskyy', label: 'Подільський' },
+				{filter: 'district', key: 'sviatoshynskyy', label: 'Святошинський' },
+				{filter: 'district', key: 'solomianskyy', label: 'Солом\'янський' },
+				{filter: 'district', key: 'shevchenkivskyy', label: 'Шевченківський ' },
+			]
+		},
+		{
+			icon: 'bunker',
+			title: 'Укриття',
+			list: [
+				{filter: 'all', label: 'Обрати всі види' },
+				{filter: 'inclusive', label: 'Інклюзивні' },
+				{filter: 'fullday', label: 'Цілодобові' },
+				{filter: 'condition', label: 'Відремонтовані' },
+				{filter: 'seats', label: 'Є місця для сидіння' },
+				{filter: 'wc', label: 'Є вбиральня ' },
+				{filter: 'gallery', label: 'Є фото' },
+				{filter: 'reviews', label: 'Є відгуки' },
+			]
+		},
+		{
+			icon: 'price-tag',
+			title: 'Позначки',
+			list: [
+				{filter: 'all', key: 'all', label: 'Обрати всі позначки' },
+				{filter: 'type', key: 'skhovyshche,dual_purpose', label: 'Укриття' },
+				{filter: 'type', key: 'destroyed_building', label: 'Зруйновані будинки' },
+				{filter: 'type', key: 'child_death', label: 'Місце загибелі дітей' },
+				{filter: 'type', key: 'expensive_shelters', label: 'Найдорожчі укриття' },
+			]
+		},
+	]
+
+-
+	info = [
+		{icon: 'map', label: 'Район: Голосіївський ' },
+		{icon: 'marker', label: 'Адреса: «Ст. Виставковий центр»' },
+		{icon: 'shield', label: 'Тип: Споруда подвійного призначення' },
+		{icon: 'bunker', label: 'Вид: Станція метрополітену' },
+		{icon: 'accessibility-sign', label: 'Інклюзивність: Так' },
+		{icon: 'clock', label: 'Режим роботи: Цілодобово' },
+		{icon: 'hammer-outline', label: 'Стан: Був ремонт' },
+		{icon: 'sofa', label: 'Місце для сидіння: Так' },
+		{icon: 'badge-wc', label: 'Вбиральня: Так' },
+		{icon: 'water tap', label: 'Вода: Так' },
+		{icon: 'number', label: 'Місткість: 4444 людей' },
+		{icon: 'area-search', label: 'Площа: 55555 м²' },
+	]
+
+-
+	info2 = [
+		//- {icon: 'map', label: 'Район: Святошинський ' },
+		{icon: 'marker', label: 'Адреса: вул. Чорнобильська, 9-А ' },
+		//- {icon: 'heart-broken', label: 'Загинули: 5 осіб' },
+		{icon: 'heart-broken', label: 'Загинули: 19 осіб, з них 5 дітей. <br> Діти: 10-річний Максим Симанюк, 9-річна Настя Симанюк, 17-річна Карина Брянцева' },
+		{icon: 'question-mark', label: 'Від чого: Ракета' },
+		{icon: 'calendar', label: 'Коли: 15 березня 2022' },
+	]
+
+-
+	reviews = [
+		{
+			name: 'Данило',
+			stars: 3,
+			date: '13.11.25',
+			time: '08:35',
+			text: 'Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду!'
+		},
+		{
+			name: 'Михайло',
+			stars: 4,
+			date: '13.11.25',
+			time: '08:35',
+			text: 'Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду!'
+		},
+		{
+			name: 'Данило',
+			stars: 5,
+			date: '13.11.25',
+			time: '08:35',
+			text: 'Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду! Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду!'
+		},
+		{
+			name: 'Данило',
+			stars: 5,
+			date: '13.11.25',
+			time: '08:35',
+			text: 'Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду! Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду!'
+		},
+		{
+			name: 'Данило',
+			stars: 5,
+			date: '13.11.25',
+			time: '08:35',
+			text: 'Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду! Текст відгуку про укриття, його стан, якісь скарги, пропозиції, думки, щось ще — цей текст просто приклад вигляду!'
+		},
+	]
+
+-
+	gallery = [
+		{
+			img: 'project1.jpg',
+		},
+		{
+			img: 'project2.jpg',
+		},
+		{
+			img: 'project1.jpg',
+		},
+		{
+			img: 'project2.jpg',
+		},
+		{
+			img: 'project1.jpg',
+		},
+		{
+			img: 'project2.jpg',
+		},
+	]
+
+-
+	gallery2 = [
+		{
+			img: 'project1.jpg',
+		},
+		{
+			img: 'project2.jpg',
+		},
+		{
+			img: 'project1.jpg',
+		},
+		{
+			img: 'project2.jpg',
+		},
+		{
+			img: 'project1.jpg',
+		},
+		{
+			img: 'project2.jpg',
+		},
+	]
+
+mixin stars(data)
+	- var total = 5
+	- var i = 0;
+	ul.stars_rating
+		while i < total
+			li.stars_rating__item
+				- i++
+				if i < data
+					+icon('star')
+				else 
+					+icon('star-outline')
+
+section.section.map.js-map-section
+	.section_in.section_in--border_2_mod
+		.map_sponsor
+			.map_sponsor__title Спецпроєкт підготовлено за підтримки
+			ul.map_sponsor__logos
+				li.map_sponsor__logos_item
+					img.map_sponsor__logos_img(src='./images/norway.svg', alt='')
+				li.map_sponsor__logos_item
+					+picture({
+						img: 'iwpr.png',
+						class: 'map_sponsor__logos_img',
+						img_class: 'map_sponsor__logos_img_el',
+						alt: 'IWPR'
+					})
+		+audioplayer({
+			audio: './static/kazhanna.mp3'
+		})
+		+audioplayer({
+			audio: './static/kazhanna.mp3'
+		})
+		
+		.map__wrap
+			.map__el.js-map(data-id=1)
+			//- labels
+			.map_labels
+				.map_labels__title Позначення на мапі
+				.map_labels__list
+					each item in labels
+						.map_labels__item
+							.map_labels__icon
+								img.map_labels__icon(src=item.icon, alt="")
+							.map_labels__label= item.label 
+			button.map_menu.js-map-filters-trigger(type='button')
+				span.map_menu__icon
+				//- +icon('menu')
+			.map_popup.js-map-filters-popup
+				.map_popup__head
+					.map_popup__title Фільтри
+					.map_popup__close.js-map-popup-close
+						+icon('close')
+				.map_popup__data
+					each filter in filters
+						.map_popup__filter
+							.map_popup__filter_trigger.js-map-accordion-trigger
+								.map_popup__filter_icon
+									+icon(filter.icon)
+								.map_popup__filter_title= filter.title
+								.map_popup__filter_arrow
+									+icon('chevron-right')
+							.map_popup__filter_data.js-filter-block
+								.map_popup__filter_data_in
+									each item in filter.list
+										.map_popup__filter_item
+											+form_checkbox({
+												label: item.label,
+												filter: item.filter,
+												key: item.key
+											})
+				.map_popup__footer
+					button.map_popup__clear(type='button').js-clear-filters Очистити фільтри
+					.map_popup__date Мапу оновлено: 9 Жовтня 2025, 09:00
+
+			//- map 2 popup
+			.map_popup.map_popup--v2_mod.js-map-marker-popup
+				.map_popup__thanks
+					.map_popup__close.map_popup__close--pos_mod.js-map-popup-close
+						+icon('close')
+					.map_popup__title_v2 Дякуємо!
+					.map_popup__thanks_text
+						p Ваш відгук передано адміністраторам на перевірку — це може зайняти певний час. Перевірка потрібна, щоб запобігти публікації забороненого контенту. 
+						p Після успішної модерації ваш відгук буде опубліковано.
+					.map_popup__popup_buttons
+						button.btn_v3(type='button').js-map-popup-close Повернутись до мапи
+				
+				.map_popup__form
+					button.map_popup__back.js-map-review-back
+						+icon('chevron-right')
+					.map_popup__close.map_popup__close--pos_mod.js-map-popup-close
+						+icon('close')
+					.map_popup__title_v2 
+						.map_popup__title_icon
+							+icon('marker')
+						span Адреса: «Ст. Виставковий центр»
+					form.map_popup__form_el
+						+stars_rating({
+							total: 5,
+							id: 'review_popup'
+						})
+						.map_popup__form_item
+							+form_input({
+								id: 'review_popup_name',
+								label: 'Введіть своє імʼя та призвіще*',
+								placeholder: 'Почніть вводити тут'
+							})
+						.map_popup__form_item
+							+form_textarea({
+								id: 'review_text',
+								label: 'Введіть свій відгук',
+								placeholder: 'Поділіться своїм враженням',
+								attributes: {'maxlength': 300}
+							})
+						.map_popup__form_item.map_popup__form_item--offset_mod
+							+image_upload({
+								id: 'review_upload_image',
+							})
+						.map_popup__popup_buttons
+							button.btn_v3(type='button').js-map-review-back Скасувати
+							button.btn_v3(type='button') Опублікувати відгук
+
+						
+				.map_popup__marker_info
+					.map_popup__head
+						.map_popup__title Про укриття
+						.map_popup__close.js-map-popup-close
+							+icon('close')
+					buttton.map_popup__rating(type='button').js-map-review-add
+						+stars(4)
+						.map_popup__rating_total (111) 
+					if info
+						.map_popup__info
+							.map_popup__info_in
+								each item in info
+									.map_popup__info_item
+										.map_popup__info_icon
+											+icon(item.icon)
+										.map_popup__info_label= item.label
+					if info2
+						.map_popup__info.map_popup__info--v2_mod
+							.map_popup__info_in
+								each item in info2
+									.map_popup__info_item
+										.map_popup__info_icon
+											+icon(item.icon)
+										.map_popup__info_label!= item.label
+					//- gallery
+					.map_popup__block(data-gallery-section)
+						.map_popup__block_title Фото
+						.map_popup__gallery
+							.map_popup__gallery_arrow.map_popup__gallery_arrow--prev_mod(data-gallery-prev-arrow)
+								+icon('chevron-right')
+							.map_popup__gallery_arrow.map_popup__gallery_arrow--next_mod(data-gallery-next-arrow)
+								+icon('chevron-right')
+							.map_popup__gallery_list.swiper(data-gallery-slider)
+								.swiper-wrapper
+									each item in gallery
+										.map_popup__gallery_item.swiper-slide
+											+picture({
+												img: item.img,
+												class: 'map_popup__gallery_image',
+												img_class: 'map_popup__gallery_image_el',
+												alt: item.title
+											})
+					//- gallery 2
+					.map_popup__block
+						.map_popup__block_title Фото
+						.map_popup__gallery_v2
+							each item in gallery
+								.map_popup__gallery_v2_item
+									+picture({
+										img: item.img,
+										class: 'map_popup__gallery_v2_image',
+										img_class: 'map_popup__gallery_v2_image_el',
+										alt: item.title
+									})
+					//- reviews
+					.map_popup__block
+						.map_popup__block_title Відгуки
+						.map_popup__reviews_wrap
+							button.map_popup__reviews_btn.js-map-review-add
+								span.map_popup__reviews_btn_icon
+									+icon('pencil-square')
+								span.map_popup__reviews_btn_title Залишити відгук
+								span.map_popup__reviews_btn_arrow
+									+icon('chevron-right')
+							if reviews
+								ul.map_popup__reviews_list
+									each item in reviews
+										li.map_popup__review(data-gallery-section)
+											.map_popup__review_name= item.name
+											.map_popup__review_head
+												.map_popup__review_stars
+													+stars(4)
+												.map_popup__review_date= item.date
+												.map_popup__review_time= item.time
+											.map_popup__review_text= item.text
+											.map_popup__gallery
+												.map_popup__gallery_arrow.map_popup__gallery_arrow--prev_mod(data-gallery-prev-arrow)
+													+icon('chevron-right')
+												.map_popup__gallery_arrow.map_popup__gallery_arrow--next_mod(data-gallery-next-arrow)
+													+icon('chevron-right')
+												.map_popup__gallery_list.swiper(data-gallery-slider)
+													.swiper-wrapper
+														each item in gallery
+															.map_popup__gallery_item.swiper-slide
+																+picture({
+																	img: item.img,
+																	class: 'map_popup__gallery_image',
+																	img_class: 'map_popup__gallery_image_el',
+																	alt: item.title
+																})
+								button.map_popup__reviews_all(type='button').js-map-reviews-all Переглянути ще відгуки
+
+						
