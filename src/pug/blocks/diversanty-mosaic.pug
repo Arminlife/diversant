@@ -1,0 +1,42 @@
+//- Диверсанти — «Мозаїка матеріалів»: слайдер карток пов'язаних матеріалів (у проді — з CPT).
+//- Swiper: десктоп 3 колонки × 2 картки (по 2 в слайді) / мобілка 1. Стрілки — червоні квадратні.
+//- Зображення — плейсхолдери (наявні ассети); реальні прев'ю статей підуть із CPT.
+-
+	const MOSAIC_CARDS = [
+		{ title: 'Школярка, яку підозрюють у вбивстві військового на замовлення спецслужб РФ, також фігурує у справах про збут наркотиків', date: '6 червня 2026, 10:00', img: 'mosaic/mosaic1.webp', url: '#' },
+		{ title: 'Від графіті до вибухівки: як «Пінгвін» у Telegram завербував двох ліцеїстів і ледь не підвів їх здійснити теракт', date: '1 червня 2026, 16:13', img: 'mosaic/mosaic2.webp', url: '#' },
+		{ title: 'Дівчина захопилася хлопцем із застосунку та ледве не підірвала військкомат', date: '10 березня 2026, 13:00', img: 'mosaic/mosaic3.webp', url: '#' },
+		{ title: 'Неповнолітня захопилась «Рембо» і ледь не підірвала ТЦК: як росіяни залучають українців до терактів через додатки для знайомств', date: '9 березня 2026, 06:00', img: 'mosaic/mosaic4.webp', url: '#' },
+		{ title: '«Помітив напис «СБУ» і зрозумів, що це кінець»: як українського підлітка підштовхнули на диверсію з підпалу на «Укрзалізниці»', date: '15 січня 2025, 06:00', img: 'mosaic/mosaic5.webp', url: '#' },
+		{ title: 'Як підлітків втягують у підпали релейних шаф на залізниці — розслідування «Слідства.Інфо»', date: '15 січня 2025, 06:00', img: 'mosaic/mosaic5.webp', url: '#' },
+	];
+	// демо: дублюємо, щоб слайдер було чим гортати (у проді — реальні записи CPT)
+	const MOSAIC_ALL = MOSAIC_CARDS.concat(MOSAIC_CARDS);
+
+mixin diversanty_mosaic_card(card)
+	a.diversanty_mosaic__card(href=card.url)
+		.diversanty_mosaic__media
+			img.diversanty_mosaic__img(src=`./images/${card.img}` alt=card.title loading="lazy")
+		span.diversanty_mosaic__badge СІ
+		.diversanty_mosaic__body
+			h3.diversanty_mosaic__card_title= card.title
+			.diversanty_mosaic__meta
+				time.diversanty_mosaic__date= card.date
+
+section.section.diversanty_mosaic(data-diversanty-mosaic)
+	.section_in
+		h2.diversanty_mosaic__title Мозаїка матеріалів
+
+		.diversanty_mosaic__box
+			.diversanty_mosaic__slider.swiper(data-diversanty-mosaic-slider)
+				.swiper-wrapper
+					- for (let i = 0; i < MOSAIC_ALL.length; i += 2)
+						.swiper-slide.diversanty_mosaic__slide
+							each card in MOSAIC_ALL.slice(i, i + 2)
+								+diversanty_mosaic_card(card)
+
+		.diversanty_mosaic__nav
+			button.diversanty_mosaic__arrow.diversanty_mosaic__arrow--prev_mod(type="button" aria-label="Попередні матеріали" data-diversanty-mosaic-prev)
+				+icon('chevron-right')
+			button.diversanty_mosaic__arrow.diversanty_mosaic__arrow--next_mod(type="button" aria-label="Наступні матеріали" data-diversanty-mosaic-next)
+				+icon('chevron-right')

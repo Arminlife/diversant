@@ -40,3 +40,6 @@ ftp.env
 
 # licensed/paid plugins — не для публічного репо
 wordpress/*.zip
+
+# local Claude preview config
+.claude/

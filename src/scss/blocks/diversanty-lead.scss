@@ -97,4 +97,20 @@
 		width: 100%;
 		height: auto; // натуральна висота → чат довший за екран і скролиться
 	}
+
+	@include bp($point_4) {
+		margin-bottom: 0;
+		&__text {
+			p {
+				font-size: 1.4rem;
+				margin-bottom: 1.2rem;
+			}
+		}
+
+		&__phone {
+			right: 0;
+			top: 0;
+			width: 35rem;
+		}
+	}
 }

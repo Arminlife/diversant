@@ -1,0 +1,235 @@
+//- Диверсанти — «Мозаїка матеріалів»: слайдер карток пов'язаних матеріалів.
+//- Десктоп 3 колонки × 2 картки (сітка з тонкими дільниками), стрілки — червоні квадратні.
+
+$mosaic_divider: #d9d9d9;
+
+.diversanty_mosaic {
+	max-width: 112rem;
+	margin: 0 auto 8rem;
+	padding-top: 1rem;
+
+	&__title {
+		margin: 0 0 3rem;
+
+		font-family: $font_1;
+		font-weight: 700;
+		font-size: 3.6rem;
+		letter-spacing: 0.01em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	// рамка-контейнер: тло = колір дільників, у 1px-щілинах між картками воно й проступає
+	&__box {
+		overflow: hidden;
+
+		background: $mosaic_divider;
+		border: 1px solid $mosaic_divider;
+	}
+
+	&__slider {
+		overflow: hidden;
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		gap: 1px; // горизонтальний дільник між двома картками колонки
+		height: auto;
+		
+		border: 1px solid $white;
+		border-collapse: collapse;
+	}
+
+	// --- картка ---
+	&__card {
+		position: relative;
+		display: block;
+		aspect-ratio: 407 / 240;
+		margin: 2rem;
+
+		color: $white;
+		text-decoration: none;
+		background: $black; // фолбек, поки вантажиться прев'ю
+
+		// затемнення знизу під текст
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+
+			background: linear-gradient(180deg, rgba(#000, 0) 34%, rgba(#000, 0.88) 100%);
+		}
+
+		&:hover .diversanty_mosaic__img {
+			transform: scale(1.04);
+		}
+
+		&:first-child:after {
+			content: '';
+			position: absolute;
+			bottom: -2rem;
+			top: auto;
+			left: -2rem;
+			height: 1px;
+			width: calc(100% + 4rem);
+			background: $white;
+		}
+	}
+
+	&__media {
+		position: absolute;
+		inset: 0;
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	// значок джерела (у проді — логотип видання)
+	&__badge {
+		position: absolute;
+		z-index: 3;
+		top: 1.2rem;
+		right: 1.2rem;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 3.4rem;
+		height: 3.4rem;
+
+		font-family: $font_1;
+		font-weight: 700;
+		font-size: 1.4rem;
+		line-height: 1;
+		color: $white;
+
+		background: $red;
+		border-radius: 0.4rem;
+	}
+
+	&__body {
+		position: absolute;
+		z-index: 2;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		padding: 1.3rem;
+	}
+
+	&__card_title {
+		display: -webkit-box;
+		overflow: hidden;
+		margin: 0 0 1rem;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+
+		font-family: $font_1;
+		font-weight: 500;
+		font-size: 1.6rem;
+		line-height: 1.2;
+		color: $white;
+	}
+
+	&__meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem 1.2rem;
+
+		font-size: 1.1rem;
+		line-height: 1.2;
+		color: rgba($white, 0.8);
+	}
+
+	&__source {
+		position: relative;
+		padding-left: 1.4rem;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			width: 0.4rem;
+			height: 0.4rem;
+			transform: translateY(-50%);
+
+			background: rgba($white, 0.6);
+			border-radius: 50%;
+		}
+	}
+
+	// --- навігація (червоні квадратні стрілки, як у коміксі) ---
+	&__nav {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		margin-top: 3rem;
+
+		svg {
+			fill: none;
+		}
+	}
+
+	&__arrow {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 7rem;
+		height: 7rem;
+
+		color: $white;
+		background: $red;
+		border: 0;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+
+		.icon {
+			width: 3rem;
+			height: 3rem;
+		}
+
+		&:hover {
+			opacity: 0.85;
+		}
+
+		&--prev_mod .icon {
+			transform: rotate(180deg);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.35;
+			pointer-events: none;
+		}
+	}
+
+	@include bp($point_4) {
+		&__title {
+			font-size: 2.4rem;
+			text-transform: none;
+		}
+
+		&__card_title {
+			font-size: 1.6rem;
+		}
+
+		&__nav {
+			gap: 1rem;
+		}
+
+		&__arrow {
+			width: 4.8rem;
+			height: 4.8rem;
+		}
+	}
+}

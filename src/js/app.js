@@ -15,6 +15,7 @@ import diversantyIntro from './components/diversanty-intro';
 import diversantyComics from './components/diversanty-comics';
 import diversantyFigures from './components/diversanty-figures';
 import diversantyGame from './components/diversanty-game';
+import diversantyMosaic from './components/diversanty-mosaic';
 
 const app = () => {
 	onWindowResize(() => {
@@ -37,6 +38,7 @@ const app = () => {
 	diversantyComics();
 	diversantyFigures();
 	diversantyGame();
+	diversantyMosaic();
 
 	const accordion = Accordion({
 		triggers: document.querySelectorAll('.js-map-accordion-trigger'),

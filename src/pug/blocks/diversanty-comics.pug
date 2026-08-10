@@ -4,6 +4,7 @@
 //- Без folder/count рендерить плейсхолдери (для ще ненаповненого коміксу).
 mixin diversanty_comics(data = {})
 	- const title = data.title || 'Назва коміксу';
+	- const ext = data.ext || 'jpeg';
 	section.section.diversanty_comics(data-diversanty-comics)
 		.section_in
 			h2.diversanty_comics__title= title
@@ -13,7 +14,7 @@ mixin diversanty_comics(data = {})
 					if data.folder && data.count
 						- for (let i = 1; i <= data.count; i++)
 							.swiper-slide.diversanty_comics__slide
-								+picture({ img: `${data.folder}/${i}.jpeg`, class: 'diversanty_comics__panel', img_class: 'diversanty_comics__img', alt: `${title}, кадр ${i}` })
+								+picture({ img: `${data.folder}/${i}.${ext}`, class: 'diversanty_comics__panel', img_class: 'diversanty_comics__img', alt: `${title}, кадр ${i}` })
 					else
 						- for (let i = 1; i <= 4; i++)
 							.swiper-slide.diversanty_comics__slide

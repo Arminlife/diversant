@@ -79,8 +79,10 @@
 		gap: 0.6rem;
 
 		@include bp($point_4) {
-			grid-template-columns: repeat(auto-fill, minmax(2.2rem, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(3.8rem, 1fr));
 			gap: 0.4rem;
+			max-height: 100vh;
+			overflow-y: hidden;
 		}
 	}
 
@@ -113,6 +115,28 @@
 		width: 100%;
 		height: auto;
 		fill: currentColor;
+	}
+
+	@include bp($point_4) {
+		padding-top: 0;
+		margin-bottom: 4rem;
+
+		&__title {
+			font-size: 2.4rem;
+		}
+
+		&__text {
+			font-size: 1.4rem;
+			line-height: 1.5;
+		}
+
+		&__filter{
+			gap: 1rem;
+		}
+
+		&__filter_btn {
+			font-size: 1rem;
+		}
 	}
 }
 

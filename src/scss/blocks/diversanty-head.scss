@@ -38,4 +38,19 @@
 	.breadcrumbs:not(:last-child) {
 		margin-bottom: 3rem;
 	}
+
+	@include bp($point_4) {
+		padding: 1.4rem 1.3rem;
+		margin: 0;
+		border-width: 0px 0px 1px 0px;
+
+		&__title {
+			font-size: 2.4rem;
+			text-transform: none;
+		}
+
+		&__credits {
+			font-size: 1.1rem;
+		}
+	}
 }

@@ -44,6 +44,10 @@
 			font-style: italic;
 			color: #d9d9d6;
 		}
+
+		@include bp($point_4) {
+			font-size: 3.6rem;
+		}
 	}
 
 	// --- фото ляльки ---
@@ -98,6 +102,12 @@
 		&:last-child {
 			font-size: 13rem;
 			font-family: $font_3;
+		}
+
+		@include bp($point_4) {
+			&:last-child {
+				font-size: 6rem;
+			}
 		}
 	}
 
