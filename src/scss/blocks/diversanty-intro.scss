@@ -40,11 +40,6 @@
 		opacity: 0; // керується JS
 		will-change: opacity, transform;
 
-		&--ru_mod {
-			font-style: italic;
-			color: #d9d9d6;
-		}
-
 		@include bp($point_4) {
 			font-size: 3.6rem;
 		}
@@ -162,13 +157,13 @@
 .diversanty_page {
 	display: block;
 	height: auto;
-	background: #cdcdcd;
+	background: #C4CED8;
 
 	.header {
 		position: sticky;
 		top: 0;
 		overflow-x: clip; // у хедері є елемент, ширший за екран → клікаємо, щоб не було горизонт. скролу (sticky не ламає)
-		background: #cdcdcd;
+		background: #C4CED8;
 	}
 
 	main,

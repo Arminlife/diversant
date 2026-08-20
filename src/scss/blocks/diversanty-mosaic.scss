@@ -52,16 +52,6 @@ $mosaic_divider: #d9d9d9;
 		text-decoration: none;
 		background: $black; // фолбек, поки вантажиться прев'ю
 
-		// затемнення знизу під текст
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			z-index: 1;
-
-			background: linear-gradient(180deg, rgba(#000, 0) 34%, rgba(#000, 0.88) 100%);
-		}
-
 		&:hover .diversanty_mosaic__img {
 			transform: scale(1.04);
 		}
@@ -81,6 +71,15 @@ $mosaic_divider: #d9d9d9;
 	&__media {
 		position: absolute;
 		inset: 0;
+
+				// затемнення знизу під текст
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 40.18%, rgba(255, 255, 255, 0) 100%);
+		}
 	}
 
 	&__img {

@@ -13,6 +13,11 @@
 		text-transform: uppercase;
 	}
 
+	&__chat {
+		display: flex;
+		flex-direction: column;
+	}
+
 	// --- мокап телефона ---
 	&__phone {
 		position: relative;
@@ -53,7 +58,12 @@
 		font-size: 1.15rem;
 		line-height: 1.35;
 
-		background: #d5dbd0; // тло Telegram
+		// тло Telegram — дудл-патерн
+		background-color: #cfd8c8;
+		background-image: url('../images/diversanty-chat-bg.webp');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 		-webkit-overflow-scrolling: touch;
 		overscroll-behavior: contain;
 
